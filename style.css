@@ -1,0 +1,774 @@
+/* =========================================================
+   ANÓMALA · style.css
+   1. Variables · 2. Base · 3. Layout · 4. Componentes · 5. Utilidades · 6. Modo edición del collage
+   Las fuentes se cargan con <link> en el <head> del HTML (un @import aquí retrasaría su descarga).
+   ========================================================= */
+
+/* ---------- 1. Variables ---------- */
+:root {
+  /* Fondos y superficies */
+  --bg-main: #131313; /* fondo principal */
+  --bg-deep: #0b0b0b; /* fondo más profundo (footer) */
+  --bg-sub: #e0e0e6; /* fondos secundarios */
+  --surface: #1c1c1c; /* interfaces y elementos de apoyo */
+
+  /* Textos */
+  --text-main: #f8f8f8; /* tipografía y espacios negativos */
+  --text-muted: #c5c5c5; /* metadatos y textos secundarios */
+
+  /* Marca y acentos */
+  --brand: #a020f0; /* elemento distintivo del logo */
+  --accent: #c96fff; /* acentos editoriales */
+  --dark: #333333; /* líneas y bordes */
+
+  /* Paleta digital / feedback / tags */
+  --ui-highlight: #ff2cfb; /* rosa eléctrico */
+  --ui-success: #abff00; /* verde ácido */
+  --ui-info: #00cfff; /* azul eléctrico */
+
+  /* Tipografías */
+  --font-body: "Space Grotesk", sans-serif;
+  --font-title: "heading-seminarrow", sans-serif;
+  --font-title-bold: 700 normal "heading-narrow", sans-serif;
+
+  /* Pesos */
+  --fw-md: 500;
+  --fw-sb: 600;
+  --fw-b: 700;
+
+  /* Escala (tipografía y espacios): cada paso multiplica por --ratio. Valores aprox. con --sm = 16px */
+  --ratio: 1.2;
+  --smallest: 12px; /* etiquetas, fechas, metadatos: mínimo legible en web */
+  --sm: clamp(16px, 0.7vw, 18px); /* texto de lectura: 16px (recomendación de Google) → 18px en pantallas grandes */
+
+  --xs: calc(var(--sm) / var(--ratio)); /* ~12px · solo para espaciados, no para texto */
+  --xxs: calc(var(--xs) / var(--ratio)); /* ~9.5px · solo para espaciados, no para texto */
+
+  --md: calc(var(--sm) * var(--ratio)); /* ~21px */
+  --lg: calc(var(--md) * var(--ratio)); /* ~27px */
+  --xl: calc(var(--lg) * var(--ratio)); /* ~35px */
+  --xxl: calc(var(--xl) * var(--ratio)); /* ~46px */
+  --xlg: calc(var(--xxl) * var(--ratio) * 1.6); /* ~59px */
+
+  --gutter: clamp(10px, 4.5vw, 500px);
+  --transition: 150ms ease;
+
+  /* Bootstrap: sus bordes (utilidades border-*, campos de formulario) usan nuestro color de líneas */
+  --bs-border-color: var(--dark);
+}
+
+/* ---------- 2. Base ---------- */
+body {
+  font-family: var(--font-body);
+  font-size: var(--sm);
+  font-weight: 300;
+  color: var(--text-main);
+  background-color: var(--bg-main);
+}
+p {
+  font-size: var(--sm);
+  letter-spacing: -0.05rem;
+}
+/* Imágenes decorativas (alt="": collage, papel rasgado, avatares…): no se seleccionan, no se arrastran
+   y no interceptan el mouse. Las que tienen contenido llevan su descripción en alt */
+img[alt=""] {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Tipografía de títulos: encabezados y los elementos que la comparten */
+h1, .h1,
+h2, .h2,
+h3, .h3,
+.nav-ejes a,
+.evento-fecha b,
+.btn-dark,
+.btn-brand,
+.btn-pink {
+  font-family: var(--font-title);
+  text-transform: uppercase;
+}
+/* Las clases .h1/.h2/.h3 dan el tamaño de encabezado a otro elemento (p. ej. <p class="h3">) */
+h1, .h1 {
+  font-size: var(--xxl);
+}
+h2, .h2 {
+  font-size: var(--xl);
+}
+h3, .h3 {
+  font-size: var(--lg);
+}
+.lead {
+  font-size: var(--md);
+}
+.frase-grande{
+  font-size: var(--xlg);
+    line-height: 1;
+    max-width: 900px;
+    margin: 0 auto;
+}
+a {
+  text-decoration: none;
+  color: var(--ui-highlight);
+  transition: color var(--transition);
+}
+a:hover {
+  color: var(--ui-info);
+}
+
+/* ---------- 3. Layout ---------- */
+.container-fluid {
+  padding-right: var(--gutter);
+  padding-left: var(--gutter);
+}
+section,
+header .container-fluid {
+  padding-top: var(--lg);
+}
+header {
+  padding-bottom: var(--lg);
+}
+/* Título de columna (Destacado, Reciente, Explora): misma separación con el contenido en todas */
+.col-title {
+  margin-bottom: var(--sm);
+}
+
+/* ---------- 4. Componentes ---------- */
+
+/* Marca: logo (hero y footer) */
+.brand-logo {
+  width: 100%;
+  margin: 10px;
+}
+
+/* Nav. Fila 1: formatos a la izquierda y utilidades a la derecha. Fila 2: los 7 ejes */
+.mid-nav .navbar-nav {
+  gap: var(--xs);
+  padding: var(--xs) 0;
+}
+.mid-nav .nav-link {
+  padding: 0;
+  color: var(--text-main);
+}
+.mid-nav .nav-link:hover,
+.mid-nav .nav-link:focus {
+  color: var(--ui-info);
+}
+.nav-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--xs) var(--md);
+  width: 100%;
+}
+.nav-util {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sm);
+  padding: var(--xs) 0;
+}
+/* Buscador: el borde va en el formulario, así campo y lupa se ven como una sola pieza */
+.nav-search {
+  display: flex;
+  border: 1px solid var(--dark);
+  transition: border-color var(--transition);
+}
+.nav-search:focus-within {
+  border-color: var(--ui-info);
+}
+.nav-search input {
+  width: 160px;
+  padding: 4px var(--xs);
+  font-size: var(--sm); /* --sm nunca baja de 16px: evita el zoom automático de iPhone al tocar el campo */
+  color: var(--text-main);
+  background: transparent;
+  border: 0;
+  outline: none;
+}
+.nav-search button {
+  display: grid;
+  place-items: center;
+  padding: 0 var(--xxs);
+  color: var(--text-main);
+  background: transparent;
+  border: 0;
+  transition: color var(--transition);
+}
+.nav-search button:hover,
+.nav-search button:focus-visible {
+  color: var(--ui-info);
+}
+.mid-nav .nav-ejes {
+  flex-wrap: wrap;
+  gap: 6px var(--md);
+  padding: var(--xs) 0;
+  list-style: none;
+}
+.nav-ejes a {
+  font-size: var(--md);
+}
+.nav-ejes a:hover {
+  color: var(--text-main);
+}
+@media (max-width: 991.98px) {
+  body {
+    padding-top: 56px; /* alto del nav fijo */
+  }
+  .mid-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    background-color: var(--bg-main);
+  }
+  .mid-nav .navbar-collapse {
+    max-height: calc(100vh - 56px);
+    overflow-y: auto;
+  }
+}
+@media (min-width: 992px) {
+  .mid-nav .navbar-nav {
+    flex-wrap: wrap;
+  }
+  .mid-nav #menu-principal {
+    border-bottom: 1px solid var(--dark);
+  }
+  .mid-nav .nav-formatos {
+    padding: var(--xs) 0;
+  }
+  .mid-nav .nav-ejes {
+    width: 100%;
+    border-top: 1px solid var(--dark);
+  }
+}
+
+/* Hero: collage de recortes. Las posiciones de cada imagen están en home-page.html */
+.image-hero {
+  position: relative;
+  overflow: hidden;
+}
+.hero-collage {
+  --collage-ratio: 1100 / 220; /* proporción del collage: subir el 2º número = hero más alto */
+  position: relative;
+  width: 100%;
+  aspect-ratio: var(--collage-ratio);
+  background-color: var(--bg-main);
+}
+.hero-collage img {
+  position: absolute;
+  left: calc(var(--x, 0) * 1%);
+  top: calc(var(--y, 0) * 1%);
+  width: calc(var(--w, 20) * 1%);
+  height: auto;
+  /* --mx/--my/--mr los pone script.js (movimiento con el mouse); no se editan a mano */
+  transform: translate(var(--mx, 0px), var(--my, 0px))
+    rotate(calc(var(--r, 0) * 1deg + var(--mr, 0deg)));
+  z-index: var(--z, 1);
+}
+.hero-tear {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  z-index: 20;
+}
+/* Pantallas angostas: el collage se dibuja al doble de ancho y se recorta al centro */
+@media (max-width: 767.98px) {
+  .hero-collage {
+    width: 200%;
+    margin-left: -50%;
+  }
+}
+
+/* Tarjetas de entrada (.entry-card) y portada del carrusel (.main-entry): son enlaces completos */
+.entry-card,
+.entry-card:hover,
+.main-entry,
+.main-entry:hover {
+  color: inherit;
+}
+.entry-card h3,
+.main-entry h3 {
+  transition: color var(--transition);
+}
+.entry-card:hover h3,
+.main-entry:hover h3 {
+  color: var(--ui-success);
+}
+.entry-card {
+  display: grid;
+  position: relative;
+  border-bottom: 1px solid var(--dark);
+}
+.entry-cat {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  gap: 5px;
+  font-size: var(--smallest);
+  color: var(--text-main);
+}
+.entry-cat span {
+  z-index: 4;
+  padding: 2px 10px;
+  background-color: var(--brand);
+  border: 2px solid var(--bg-main);
+  border-top: none;
+  border-right: none;
+}
+.entry-img {
+  position: relative;
+  aspect-ratio: 4 / 2;
+  background-color: var(--surface);
+}
+.entry-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.rasgado-total {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+.entry-content {
+  position: relative;
+  width: 100%;
+  padding: var(--sm);
+}
+/* Metadatos (autor/fecha, lugar/horario, barra legal del footer) */
+.entry-info {
+  display: flex;
+  flex-wrap: wrap; /* si no caben lado a lado, el segundo dato baja */
+  justify-content: space-between;
+  gap: 2px var(--xs);
+  margin: var(--xs) 0;
+  font-size: var(--smallest);
+  color: var(--text-muted);
+}
+/* Ícono de Anómala sobre la foto. Es una máscara: el archivo da la forma y el fondo, el color.
+   script.js elige al azar --icono (iconos-anomala/*.webp) y --icono-color (brand o colores UI) */
+.anomala-icon {
+  position: absolute;
+  top: calc(var(--xlg) * -1 + 5px);
+  right: var(--xs);
+  z-index: 2;
+  width: var(--xlg);
+  height: var(--xlg);
+  background-color: var(--icono-color, var(--brand));
+  -webkit-mask: var(--icono, url("iconos-anomala/asterisco.webp")) center / contain no-repeat;
+  mask: var(--icono, url("iconos-anomala/asterisco.webp")) center / contain no-repeat;
+}
+/* Grilla de tarjetas: todas del mismo alto */
+.entry-grid .entry-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.entry-grid .entry-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+/* Columna "Reciente": tarjetas horizontales */
+@media (min-width: 768px) {
+  .horizontal {
+    display: grid;
+    grid-template-rows: auto; /* fila del título */
+    grid-auto-rows: 1fr; /* las tarjetas se reparten el alto: la última termina al pie, como el carrusel */
+    gap: var(--sm); /* igual que el margen de .col-title, para que las columnas queden alineadas */
+  }
+  .horizontal > .col-title {
+    margin-bottom: 0; /* el gap de la grilla ya separa */
+  }
+  .horizontal .entry-card {
+    display: flex;
+  }
+  .horizontal .entry-img {
+    width: 180px;
+    height: 180px;
+  }
+  .horizontal .entry-content {
+    max-height: fit-content;
+    padding-top: var(--lg);
+  }
+  .horizontal .anomala-icon {
+    display: none;
+  }
+}
+
+/* Carrusel de destacados: ocupa el alto que queda bajo el título y cada slide lo llena */
+.main-carousel {
+  flex: 1;
+}
+.main-carousel .carousel-inner,
+.main-carousel .carousel-item {
+  height: 100%;
+}
+.main-carousel .carousel-indicators {
+  top: var(--sm);
+  bottom: auto;
+  justify-content: flex-end;
+  margin: 0 var(--lg) 0 0;
+}
+.main-carousel .carousel-indicators [data-bs-target] {
+  background-color: var(--text-main);
+}
+.main-carousel .carousel-indicators .active {
+  background-color: var(--brand);
+}
+.main-carousel .carousel-control-prev,
+.main-carousel .carousel-control-next {
+  z-index: 2;
+  width: 10%;
+}
+.main-entry {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  min-height: 700px;
+  background-color: var(--surface);
+}
+/* Oscurece la parte inferior de la foto para que el texto se lea */
+.main-entry::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.75));
+}
+.main-entry .entry-cat {
+  position: relative;
+}
+.main-entry-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  max-width: 700px;
+  padding: var(--lg);
+}
+.main-entry h3 {
+  font-size: var(--xlg);
+  line-height: 1;
+  color: var(--text-main);
+  background-color: var(--bg-main);
+}
+
+/* Lista de enlaces con líneas (Explora y menús del footer). En una columna flex, ocupa todo el alto */
+.tematicas {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-bottom: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.tematicas li {
+  display: flex;
+  flex: 1 1 0;
+  align-items: center;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--dark);
+}
+/* :where() deja la especificidad baja para que las utilidades de color (.c-*) puedan pintar un enlace */
+:where(.tematicas) a {
+  color: var(--text-main);
+}
+:where(.tematicas) a:hover {
+  color: var(--brand);
+}
+
+/* Sección rasgada: bloque violeta con bordes de papel roto arriba y abajo */
+.s-rasgada {
+  padding: var(--xl);
+  background: var(--brand);
+  clip-path: polygon(
+    0 3%, 4% 0, 9% 2.5%, 15% 0.5%, 22% 3%, 30% 0, 38% 2%, 46% 0.5%, 55% 3%, 63% 0, 71% 2.5%, 80% 0.5%, 88% 3%, 95% 0, 100% 2%,
+    100% 97%, 96% 100%, 89% 97.5%, 82% 99.5%, 74% 97%, 66% 100%, 58% 98%, 50% 99.5%, 41% 97%, 33% 100%, 25% 97.5%, 17% 99.5%, 9% 97%, 3% 100%, 0 98%
+  );
+}
+@media (max-width: 767.98px) {
+  .s-rasgada {
+    padding: var(--xl) var(--md);
+  }
+}
+
+/* Formulario en fila: campo + botón; si no caben, el botón baja */
+.form-fila {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--xxs);
+}
+.form-fila input {
+  flex: 1 1 220px;
+  padding: var(--xs) var(--sm);
+  font-size: var(--sm); /* --sm nunca baja de 16px: evita el zoom automático de iPhone al tocar el campo */
+  color: var(--bg-main);
+  background: var(--text-main);
+  border: 0;
+}
+.form-fila input:focus {
+  outline: 2px solid var(--ui-info);
+}
+
+/* Campos de formulario de Bootstrap (.form-control, .form-select, .form-check) con los colores de Anómala */
+.form-control,
+.form-control:focus,
+.form-select,
+.form-select:focus {
+  color: var(--text-main);
+  background-color: var(--surface);
+  border-radius: 0;
+}
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus {
+  border-color: var(--ui-info);
+  box-shadow: 0 0 0 1px var(--ui-info);
+}
+.form-check-input {
+  background-color: var(--surface);
+  border-radius: 0;
+}
+.form-check-input:checked {
+  background-color: var(--brand);
+  border-color: var(--brand);
+}
+
+/* Botones (se usan solos, sin la clase .btn de Bootstrap). La tipografía viene de la regla de títulos */
+.btn-dark,
+.btn-brand,
+.btn-pink {
+  display: inline-block;
+  padding: var(--xxs) var(--sm);
+  font-size: var(--md);
+  line-height: 1.2;
+  border: 0;
+  transition: color var(--transition), background-color var(--transition);
+}
+.btn-dark {
+  color: var(--text-main);
+  background: var(--bg-main);
+}
+.btn-dark:hover {
+  color: var(--ui-success);
+}
+.btn-brand {
+  color: var(--text-main);
+  background: var(--brand);
+}
+.btn-pink {
+  color: var(--bg-main);
+  background: var(--ui-highlight);
+}
+.btn-brand:hover,
+.btn-pink:hover {
+  color: var(--bg-main);
+  background: var(--ui-success);
+}
+
+/* Filtros: fila de píldoras; el activo lleva .is-active.
+   Botones si filtran en la misma página (cartelera), enlaces si llevan a otra (índice de publicaciones) */
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--xxs);
+  margin-bottom: var(--md);
+}
+.filtros button,
+.filtros a {
+  padding: 4px var(--xs);
+  font-size: var(--sm);
+  color: var(--text-main);
+  background: transparent;
+  border: 1px solid var(--dark);
+  border-radius: 999px;
+  transition: color var(--transition), background-color var(--transition);
+}
+.filtros button:hover,
+.filtros a:hover {
+  border-color: var(--text-main);
+}
+.filtros .is-active {
+  color: var(--bg-main);
+  background: var(--text-main);
+  border-color: var(--text-main);
+}
+
+/* Paginación: el componente de Bootstrap, con los colores de Anómala vía sus propias variables */
+.pagination {
+  --bs-pagination-color: var(--text-main);
+  --bs-pagination-bg: transparent;
+  --bs-pagination-border-color: var(--dark);
+  --bs-pagination-hover-color: var(--bg-main);
+  --bs-pagination-hover-bg: var(--text-main);
+  --bs-pagination-hover-border-color: var(--text-main);
+  --bs-pagination-focus-color: var(--text-main);
+  --bs-pagination-focus-bg: transparent;
+  --bs-pagination-focus-box-shadow: 0 0 0 2px var(--ui-info);
+  --bs-pagination-active-color: var(--text-main);
+  --bs-pagination-active-bg: var(--brand);
+  --bs-pagination-active-border-color: var(--brand);
+  --bs-pagination-disabled-color: var(--dark);
+  --bs-pagination-disabled-bg: transparent;
+  --bs-pagination-disabled-border-color: var(--dark);
+  --bs-pagination-border-radius: 0;
+  --bs-pagination-font-size: var(--sm);
+}
+
+/* Cartelera: evento como tarjeta tipo entrada. --d = color de la disciplina */
+.evento {
+  display: flex;
+  height: 100%;
+  background: var(--surface);
+  border-top: 4px solid var(--d, var(--brand));
+}
+/* Talón con la fecha; la línea punteada y los semicírculos simulan el troquel */
+.evento-fecha {
+  flex: none;
+  position: relative;
+  width: 86px;
+  padding: var(--sm) 0;
+  font-size: var(--smallest);
+  text-align: center;
+  text-transform: uppercase;
+  border-right: 2px dashed var(--bg-main);
+}
+.evento-fecha::before,
+.evento-fecha::after {
+  content: "";
+  position: absolute;
+  right: -9px;
+  width: 16px;
+  height: 16px;
+  background: var(--bg-main);
+  border-radius: 50%;
+}
+.evento-fecha::before {
+  top: -10px;
+}
+.evento-fecha::after {
+  bottom: -8px;
+}
+.evento-fecha b {
+  display: block;
+  font-size: var(--xl);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--d, var(--text-main));
+}
+
+/* Cuerpo del artículo: envuelve the_content() de WordPress. Lo que escribe la redacción en el editor
+   (párrafos, títulos, citas, imágenes, listas) llega sin clases propias, por eso se estiliza desde aquí */
+.cuerpo {
+  line-height: 1.7;
+}
+.cuerpo h2 {
+  margin-top: var(--xl);
+}
+.cuerpo h3 {
+  margin-top: var(--lg);
+}
+.cuerpo a {
+  text-decoration: underline; /* dentro del texto, los enlaces se subrayan para distinguirlos sin depender del color */
+  text-underline-offset: 3px;
+}
+.cuerpo blockquote {
+  margin: var(--xl) 0;
+  padding-left: var(--md);
+  border-left: 4px solid var(--brand);
+}
+.cuerpo blockquote p {
+  font-family: var(--font-title);
+  font-size: var(--xl);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+.cuerpo cite,
+.cuerpo figcaption {
+  font-size: var(--smallest);
+  font-style: normal;
+  color: var(--text-muted);
+}
+.cuerpo figure {
+  margin: var(--xl) 0;
+}
+.cuerpo img,
+.cuerpo audio,
+.cuerpo video {
+  width: 100%;
+  height: auto;
+}
+.cuerpo figcaption {
+  margin-top: var(--xxs);
+}
+
+/* Footer: solo fondo, borde y aire; el contenido usa la grilla de Bootstrap, .h3, .tematicas y .entry-info */
+.footer {
+  margin-top: var(--xl);
+  padding: var(--xl) 0 var(--md);
+  background: var(--bg-deep);
+  border-top: 1px solid var(--dark);
+}
+
+/* ---------- 5. Utilidades ---------- */
+
+/* Colores de los ejes (los de la Brújula). Van al final para ganarle a los componentes sin !important */
+.c-lime { color: var(--ui-success); }
+.c-pink { color: var(--ui-highlight); }
+.c-cyan { color: var(--ui-info); }
+.c-violet { color: var(--accent); }
+
+/* Etiqueta: rótulo chico en mayúsculas; toma el color de --d si existe */
+.etiqueta {
+  font-size: var(--smallest);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--d, var(--accent));
+}
+
+/* Enlace de cierre de sección: "Ver todo →" */
+.link-mas {
+  display: inline-block;
+  margin-top: var(--sm);
+  font-weight: var(--fw-md);
+}
+
+/* ---------- 6. Modo edición del collage (home-page.html#editar) ---------- */
+.collage-editing .hero-collage img {
+  pointer-events: auto; /* en #editar los recortes sí se arrastran */
+  cursor: grab;
+}
+.collage-editing .hero-collage img.is-selected {
+  outline: 2px dashed var(--ui-success);
+  outline-offset: 2px;
+}
+.collage-panel {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  z-index: 2000;
+  max-width: 360px;
+  padding: 12px;
+  font: var(--smallest)/1.5 ui-monospace, monospace;
+  color: var(--text-main);
+  background: rgba(0, 0, 0, 0.88);
+  border: 1px solid var(--ui-success);
+}
+.collage-panel button {
+  margin-top: 8px;
+  padding: 4px 10px;
+  font: inherit;
+  color: var(--bg-main);
+  background: var(--ui-success);
+  border: 0;
+}

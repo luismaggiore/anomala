@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bordar para no olvidar · Anómala</title>
+    <!-- Fuentes: Typekit (títulos) y Google Fonts (texto). preconnect adelanta la conexión -->
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://use.typekit.net/aie8ork.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main>
+      <div class="d-flex flex-column">
+        <header  >
+
+          <div class="container-fluid pt-5">
+            <div class="row align-items-center g-5">
+              <div class="col-8 col-md-6 col-lg-4">
+                <a class="d-block" href="home-page.html" aria-label="Anómala, ir al inicio">
+                <svg
+                  id="Capa_1"
+                  class="brand-logo"
+                  data-name="Capa 1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 44.97 7.2"
+                  role="img"
+                  aria-label="Anómala"
+                >
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill: #fff;
+                      }
+
+                      .cls-2 {
+                        fill: #a020f0;
+                      }
+                    </style>
+                  </defs>
+                  <path
+                    class="cls-1"
+                    d="M42.38.25h-2.67l-1.86,4.87h-1.82V.25h-2.38v4.75s-1.77-4.75-1.77-4.75h-2.68l-1.83,4.76V.25h-2.47l-1.29,2.27v-.02s-1.44-2.25-1.44-2.25h0s-2.54,0-2.54,0v.94c.52.67.84,1.52.84,2.44s-.32,1.78-.85,2.46v.98s2.56,0,2.56,0v-1.94l1.38,1.94,1.5-1.94v1.94s1.42,0,1.42,0h2.62l.32-.84h2.21l.32.83h1.71s2.4,0,2.4,0h3.61l.32-.84h2.2l.32.83h2.47l-2.59-6.81ZM29.84,4.6l.67-2.11.63,2.11h-1.31ZM40.41,4.6l.66-2.09.66,2.09h-1.32Z"
+                  />
+                  <path
+                    class="cls-1"
+                    d="M11.06,2.9l-1.81-2.65h-2.04l-.08,4.68L5.35.25h-2.61L0,7.07h2.62l.32-.84h2.21l.32.83h3.93s0-2.79,0-2.79l1.85,2.79h2.18v-.91c-.57-.69-.92-1.57-.92-2.54s.34-1.85.92-2.54V.25h-2.35v2.65ZM3.38,4.6l.66-2.09.65,2.09h-1.3Z"
+                  />
+                  <path
+                    class="cls-2"
+                    d="M19.54,1.69c-.64-1.01-1.76-1.69-3.05-1.69s-2.33.62-2.98,1.57c-.39.58-.63,1.28-.63,2.03s.23,1.45.63,2.03c.65.95,1.74,1.57,2.98,1.57s2.4-.67,3.04-1.67c.36-.56.56-1.22.56-1.93s-.21-1.36-.55-1.91"
+                  />
+                </svg>
+                </a>
+              </div>
+              <div class="col-12 col-lg-5 offset-lg-3">
+                <p class="h1">Busquemos lo que todavía no tiene nombre.</p>
+                <p class="lead">
+                  Periodismo, creación y pensamiento crítico para leer la
+                  cultura como el lugar donde una sociedad crea, discute,
+                  recuerda y proyecta su futuro.
+                </p>
+              </div>
+            </div>
+          </div>
+        </header>
+        <!-- NAV: fila 1 = formatos (qué tipo de pieza) + utilidades; fila 2 = los 7 ejes de la Brújula -->
+        <nav
+          class="navbar navbar-expand-lg mid-nav order-first order-lg-0"
+          data-bs-theme="dark"
+          aria-label="Navegación principal"
+        >
+          <div class="container-fluid">
+            <button
+              class="navbar-toggler ms-auto"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#menu-principal"
+              aria-controls="menu-principal"
+              aria-expanded="false"
+              aria-label="Abrir menú"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse flex-column align-items-stretch" id="menu-principal">
+              <div class="nav-row">
+                <ul class="navbar-nav nav-formatos" aria-label="Formatos">
+                  <li class="nav-item"><a class="nav-link" href="#">Reportajes</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Entrevistas</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Conversaciones</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Crónicas</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Columnas</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Explicadores</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Ensayos visuales y sonoros</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Radar</a></li>
+                </ul>
+                <div class="nav-util">
+                  <form class="nav-search" role="search" onsubmit="return false">
+                    <label class="visually-hidden" for="buscar">Buscar</label>
+                    <input id="buscar" type="search" placeholder="Buscar" />
+                    <button type="submit" aria-label="Buscar">
+                      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <circle cx="10.5" cy="10.5" r="6.5" />
+                        <path d="m15.5 15.5 5 5" />
+                      </svg>
+                    </button>
+                  </form>
+                  <a class="nav-link" href="cartelera.html">Cartelera</a>
+                  <a class="nav-link" href="quienes-somos.html">Quiénes somos</a>
+                  <a class="nav-link" href="contacto.html">Contacto</a>
+                  <a class="btn-pink py-1 px-3" href="#">Donar</a>
+                </div>
+              </div>
+              <ul class="navbar-nav nav-ejes" aria-label="Ejes">
+                <li><a class="c-lime" href="#">Cultura y creación</a></li>
+                <li><a class="c-pink" href="#">Política cultural</a></li>
+                <li><a class="c-cyan" href="#">Sociedad y vida cotidiana</a></li>
+                <li><a class="c-violet" href="#">Tendencias y cultura digital</a></li>
+                <li><a class="c-lime" href="#">Industrias culturales</a></li>
+                <li><a class="c-pink" href="#">Territorios y comunidades</a></li>
+                <li><a class="c-cyan" href="#">Cultura popular</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <!--
+        ENSAYO VISUAL / SONORO (en WordPress: single.php cuando el formato es "Ensayo visual/sonoro",
+        o una plantilla de formato propia). Columna central sin barra lateral: el contenido manda.
+        En el editor: bloques de audio, video e imagen en secuencia, cada uno con su pie.
+      -->
+      <article>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12 col-lg-8 offset-lg-2">
+              <header>
+                <p class="mb-2"><a class="etiqueta" href="#">Ensayo visual</a> · <a class="etiqueta" href="#" style="--d: var(--ui-success)">Cultura y creación</a></p>
+                <h1>Bordar para no olvidar</h1>
+                <p class="lead">Un recorrido en imágenes y sonido por talleres de bordado que registran historias familiares y comunitarias.</p>
+                <div class="entry-info">
+                  <span>por <a href="autor.html">Ricardo González</a> · Fotos: Unsplash</span>
+                  <span><time datetime="2026-09-24">24 de septiembre de 2026</time> · 8 imágenes · audio 6 min</span>
+                </div>
+              </header>
+
+              <!-- Desde aquí: the_content() -->
+              <div class="cuerpo">
+                <figure class="wp-block-audio">
+                  <audio controls preload="none"></audio>
+                  <figcaption class="wp-element-caption">Escucha: las bordadoras cuentan, mientras trabajan, de dónde viene cada historia (6 min).</figcaption>
+                </figure>
+
+                <p>En el taller, nadie borda en silencio. Mientras la aguja avanza, se cuentan las historias que después quedan fijas en la tela: una casa que ya no existe, un río, los nombres de quienes se fueron.</p>
+
+                <figure class="wp-block-image">
+                  <img src="https://images.unsplash.com/photo-1671535108620-d169ce916f09?auto=format&fit=crop&w=1600&q=70" alt="Bordado sobre tela negra junto a unas tijeras" loading="lazy" />
+                  <figcaption class="wp-element-caption">Cada bordado parte de un recuerdo que alguien del grupo trae a la mesa.</figcaption>
+                </figure>
+
+                <figure class="wp-block-image">
+                  <img src="https://images.unsplash.com/photo-1757085242652-f8cd4d3de889?auto=format&fit=crop&w=1600&q=70" alt="Personas trabajando alrededor de una mesa en un taller" loading="lazy" />
+                  <figcaption class="wp-element-caption">El taller funciona una vez por semana en una sede vecinal.</figcaption>
+                </figure>
+
+                <blockquote class="wp-block-quote">
+                  <p>Lo que no se cuenta se olvida. Lo que se borda, se queda.</p>
+                  <cite>Integrante del taller</cite>
+                </blockquote>
+
+                <figure class="wp-block-image">
+                  <img src="https://images.unsplash.com/photo-1569783721854-33a99b4c0bae?auto=format&fit=crop&w=1600&q=70" alt="Público mirando obras en una exposición" loading="lazy" />
+                  <figcaption class="wp-element-caption">La muestra de fin de año reunió los trabajos de tres generaciones.</figcaption>
+                </figure>
+
+                <figure class="wp-block-video">
+                  <video controls preload="none" poster="https://images.unsplash.com/photo-1504609813442-a8924e83f76e?auto=format&fit=crop&w=1600&q=70"></video>
+                  <figcaption class="wp-element-caption">Video: la inauguración de la muestra (2 min).</figcaption>
+                </figure>
+
+                <p>Este ensayo forma parte de una serie sobre oficios que guardan memoria. Las imágenes y el audio se registraron con autorización de las participantes.</p>
+              </div>
+              <!-- Hasta aquí: the_content() -->
+
+              <h2 class="h3 mt-5">Temas</h2>
+              <nav class="filtros" aria-label="Temas de esta nota">
+                <a href="#">Oficios</a><a href="#">Patrimonio y memoria</a><a href="#">Fotografía</a>
+              </nav>
+
+              <!-- Autor al final (sin barra lateral) -->
+              <div class="mt-5 pt-5 border-top">
+              <!-- Autor (en WordPress: get_the_author_meta / avatar) -->
+                <section class="pt-0 mb-5" aria-label="Sobre el autor">
+                  <div class="d-flex align-items-center gap-3 mb-3">
+                    <img class="rounded-circle flex-shrink-0" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&h=200&q=70" alt="Ricardo González" width="80" height="80" />
+                    <div>
+                      <p class="etiqueta mb-1">Autor</p>
+                      <h2 class="h3 mb-0">Ricardo González</h2>
+                    </div>
+                  </div>
+                  <p>Periodista cultural. Escribe sobre territorios, gestión comunitaria y las escenas que sostienen la cultura fuera de los grandes centros.</p>
+                  <a class="btn-brand" href="autor.html">Ver sus publicaciones</a>
+                </section>
+              </div>
+
+              <!--
+                COMENTARIOS (en WordPress: comments_template()).
+                · La lista sale de wp_list_comments() con un callback que imprime este marcado.
+                · El formulario sale de comment_form() pasándole estos campos y class_submit="btn-brand".
+                · Avatares: get_avatar() (Gravatar).
+              -->
+              <section id="comentarios" class="mt-5" aria-labelledby="comentarios-titulo">
+                <h2 id="comentarios-titulo" class="h3">3 comentarios</h2>
+
+                <ol class="list-unstyled">
+                  <li class="py-3 border-bottom">
+                    <article class="d-flex gap-3">
+                      <img class="rounded-circle flex-shrink-0" src="https://www.gravatar.com/avatar/?d=mp&s=96" alt="" width="48" height="48" loading="lazy" />
+                      <div class="flex-grow-1">
+                        <div class="entry-info mt-0">
+                          <span><b>Camila Rojas</b></span>
+                          <time datetime="2026-10-06T18:20">6 oct 2026, 18:20</time>
+                        </div>
+                        <p>En mi comuna pasa lo mismo: el centro cultural funciona porque tres vecinas se turnan para abrirlo. Gracias por contarlo.</p>
+                        <a class="etiqueta" href="#comentar">Responder</a>
+                      </div>
+                    </article>
+
+                    <!-- Respuestas (comentarios anidados) -->
+                    <ol class="list-unstyled ms-5 mt-3">
+                      <li class="pt-3 border-top">
+                        <article class="d-flex gap-3">
+                          <img class="rounded-circle flex-shrink-0" src="https://www.gravatar.com/avatar/?d=mp&s=96" alt="" width="48" height="48" loading="lazy" />
+                          <div class="flex-grow-1">
+                            <div class="entry-info mt-0">
+                              <span><b>Ricardo González</b> · Autor</span>
+                              <time datetime="2026-10-06T19:05">6 oct 2026, 19:05</time>
+                            </div>
+                            <p>Gracias, Camila. Si quieres contarnos más sobre ese centro, escríbenos: nos interesa seguir el tema.</p>
+                            <a class="etiqueta" href="#comentar">Responder</a>
+                          </div>
+                        </article>
+                      </li>
+                    </ol>
+                  </li>
+                  <li class="py-3 border-bottom">
+                    <article class="d-flex gap-3">
+                      <img class="rounded-circle flex-shrink-0" src="https://www.gravatar.com/avatar/?d=mp&s=96" alt="" width="48" height="48" loading="lazy" />
+                      <div class="flex-grow-1">
+                        <div class="entry-info mt-0">
+                          <span><b>Tomás Fuentes</b></span>
+                          <time datetime="2026-10-07T09:40">7 oct 2026, 09:40</time>
+                        </div>
+                        <p>Faltaría hablar de cómo se reparten los fondos regionales. ¿Habrá una segunda parte?</p>
+                        <a class="etiqueta" href="#comentar">Responder</a>
+                      </div>
+                    </article>
+                  </li>
+                </ol>
+
+                <!-- Formulario (comment_form). Textos por defecto de WordPress en español -->
+                <h3 id="comentar" class="mt-5">Deja un comentario</h3>
+                <p class="entry-info">Tu dirección de correo no será publicada. Los campos obligatorios están marcados con *</p>
+                <form class="row g-3" action="#" method="post" onsubmit="return false">
+                  <div class="col-12">
+                    <label class="form-label" for="comentario">Comentario *</label>
+                    <textarea class="form-control" id="comentario" name="comment" rows="5" required></textarea>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label class="form-label" for="autor">Nombre *</label>
+                    <input class="form-control" id="autor" name="author" type="text" autocomplete="name" required />
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label class="form-label" for="correo">Correo electrónico *</label>
+                    <input class="form-control" id="correo" name="email" type="email" autocomplete="email" required />
+                  </div>
+                  <div class="col-12 form-check ms-2">
+                    <input class="form-check-input" id="recordar" name="wp-comment-cookies-consent" type="checkbox" />
+                    <label class="form-check-label entry-info my-0" for="recordar">Guardar mi nombre y correo en este navegador para la próxima vez que comente.</label>
+                  </div>
+                  <div class="col-12">
+                    <button class="btn-brand" type="submit">Publicar comentario</button>
+                  </div>
+                </form>
+              </section>
+            </div>
+          </div>
+        </div>
+      </article>
+
+        <!-- SIGUE LEYENDO: notas relacionadas (mismo eje o formato) -->
+        <section>
+          <div class="container-fluid">
+            <h2>Sigue leyendo</h2>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 entry-grid">
+              <div class="col">
+                <a class="entry-card" href="#">
+                  <div class="entry-cat"><span class="category">Crónica</span><span class="category">Cultura popular</span></div>
+                  <div class="entry-img">
+                    <img class="entry-photo" src="https://images.unsplash.com/photo-1504609813442-a8924e83f76e?auto=format&fit=crop&w=800&q=70" alt="Personas bailando de noche" loading="lazy" />
+                    <img src="papel-rasgado2.webp" class="rasgado-total" alt="" />
+                  </div>
+                  <div class="entry-content">
+                    <span class="anomala-icon" aria-hidden="true"></span>
+                    <h3>Bailar para quedarse: una noche en la fiesta del barrio</h3>
+                    <div class="entry-info"><span>por Ricardo González</span><span>05/10/26</span></div>
+                    <p>Cumbia, cueca y cocina compartida: los espacios donde la comunidad se encuentra cuando cae el sol.</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col">
+                <a class="entry-card" href="#">
+                  <div class="entry-cat"><span class="category">Explicador</span><span class="category">Política cultural</span></div>
+                  <div class="entry-img">
+                    <img class="entry-photo" src="https://images.unsplash.com/photo-1572887069547-4b5b4771a069?auto=format&fit=crop&w=800&q=70" alt="Edificio con un mural junto a la calle" loading="lazy" />
+                    <img src="papel-rasgado3.webp" class="rasgado-total" alt="" />
+                  </div>
+                  <div class="entry-content">
+                    <span class="anomala-icon" aria-hidden="true"></span>
+                    <h3>Muros que hablan: quién decide el arte en la calle</h3>
+                    <div class="entry-info"><span>por Ricardo González</span><span>03/10/26</span></div>
+                    <p>Permisos, colectivos y municipios: cómo se negocia (y se borra) el muralismo en las ciudades.</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col">
+                <a class="entry-card" href="#">
+                  <div class="entry-cat"><span class="category">Entrevista</span><span class="category">Patrimonio</span></div>
+                  <div class="entry-img">
+                    <img class="entry-photo" src="https://images.unsplash.com/photo-1583521214690-73421a1829a9?auto=format&fit=crop&w=800&q=70" alt="Pilas de documentos de archivo" loading="lazy" />
+                    <img src="papel-rasgado.webp" class="rasgado-total" alt="" />
+                  </div>
+                  <div class="entry-content">
+                    <span class="anomala-icon" aria-hidden="true"></span>
+                    <h3>“El archivo también es un lugar de disputa”</h3>
+                    <div class="entry-info"><span>por Ricardo González</span><span>01/10/26</span></div>
+                    <p>Una archivera sobre qué se guarda, qué se pierde y quién decide la memoria de una ciudad.</p>
+                  </div>
+                </a>
+              </div>
+</div>
+          </div>
+        </section>
+
+      <!-- Newsletter. Conectar el formulario al proveedor de correo que usen (Mailchimp, Substack, etc.) -->
+      <section>
+        <div class="container-fluid">
+          <div class="s-rasgada">
+            <div class="row g-4 align-items-center">
+              <div class="col-12 col-lg-7">
+                <h2>Recibe Anómala en tu correo</h2>
+                <p class="mb-0">Lo que publicamos, directo a tu bandeja.</p>
+              </div>
+              <div class="col-12 col-lg-5">
+                <form class="form-fila" onsubmit="return false">
+                  <label class="visually-hidden" for="newsletter-mail">Tu correo</label>
+                  <input id="newsletter-mail" type="email" placeholder="tu@correo.cl" required />
+                  <button class="btn-dark" type="submit">Suscribirme</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="container-fluid">
+          <div class="row g-5">
+            <div class="col-12 col-lg-3">
+              <a class="d-block" href="home-page.html" aria-label="Anómala, ir al inicio">
+              <svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44.97 7.2" role="img" aria-label="Anómala">
+                <path fill="#f8f8f8" d="M42.38.25h-2.67l-1.86,4.87h-1.82V.25h-2.38v4.75s-1.77-4.75-1.77-4.75h-2.68l-1.83,4.76V.25h-2.47l-1.29,2.27v-.02s-1.44-2.25-1.44-2.25h0s-2.54,0-2.54,0v.94c.52.67.84,1.52.84,2.44s-.32,1.78-.85,2.46v.98s2.56,0,2.56,0v-1.94l1.38,1.94,1.5-1.94v1.94s1.42,0,1.42,0h2.62l.32-.84h2.21l.32.83h1.71s2.4,0,2.4,0h3.61l.32-.84h2.2l.32.83h2.47l-2.59-6.81ZM29.84,4.6l.67-2.11.63,2.11h-1.31ZM40.41,4.6l.66-2.09.66,2.09h-1.32Z" />
+                <path fill="#f8f8f8" d="M11.06,2.9l-1.81-2.65h-2.04l-.08,4.68L5.35.25h-2.61L0,7.07h2.62l.32-.84h2.21l.32.83h3.93s0-2.79,0-2.79l1.85,2.79h2.18v-.91c-.57-.69-.92-1.57-.92-2.54s.34-1.85.92-2.54V.25h-2.35v2.65ZM3.38,4.6l.66-2.09.65,2.09h-1.3Z" />
+                <path fill="#a020f0" d="M19.54,1.69c-.64-1.01-1.76-1.69-3.05-1.69s-2.33.62-2.98,1.57c-.39.58-.63,1.28-.63,2.03s.23,1.45.63,2.03c.65.95,1.74,1.57,2.98,1.57s2.4-.67,3.04-1.67c.36-.56.56-1.22.56-1.93s-.21-1.36-.55-1.91" />
+              </svg>
+              </a>
+              <p class="h3">Intensa • <span class="c-pink">Dispersa</span> • <span class="c-lime">Distinta</span></p>
+              <p>Busquemos lo que todavía no tiene nombre.</p>
+              <a href="mailto:hola@anomala.org">hola@anomala.org</a>
+            </div>
+            <nav class="col-6 col-md-3 col-lg-2 offset-lg-1" aria-label="Formatos">
+              <h2 class="h3">Formatos</h2>
+              <ul class="tematicas">
+                <li><a href="#">Reportajes</a></li>
+                <li><a href="#">Entrevistas</a></li>
+                <li><a href="#">Conversaciones</a></li>
+                <li><a href="#">Crónicas</a></li>
+                <li><a href="#">Columnas</a></li>
+                <li><a href="#">Explicadores</a></li>
+                <li><a href="#">Ensayos visuales y sonoros</a></li>
+                <li><a href="#">Radar</a></li>
+              </ul>
+            </nav>
+            <nav class="col-6 col-md-3 col-lg-2" aria-label="Ejes">
+              <h2 class="h3">Ejes</h2>
+              <ul class="tematicas">
+                <li><a href="#">Cultura y creación</a></li>
+                <li><a href="#">Política cultural</a></li>
+                <li><a href="#">Sociedad y vida cotidiana</a></li>
+                <li><a href="#">Tendencias y cultura digital</a></li>
+                <li><a href="#">Industrias culturales</a></li>
+                <li><a href="#">Territorios y comunidades</a></li>
+                <li><a href="#">Cultura popular</a></li>
+              </ul>
+            </nav>
+            <nav class="col-6 col-md-3 col-lg-2" aria-label="Anómala">
+              <h2 class="h3">Anómala</h2>
+              <ul class="tematicas">
+                <li><a href="cartelera.html">Cartelera</a></li>
+                <li><a href="quienes-somos.html">Quiénes somos</a></li>
+                <li><a href="#">Donar</a></li>
+                <li><a href="page.html">Transparencia</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+              </ul>
+            </nav>
+            <nav class="col-6 col-md-3 col-lg-2" aria-label="Síguenos">
+              <h2 class="h3">Síguenos</h2>
+              <!-- Completar con las redes y canales reales del medio -->
+              <ul class="tematicas">
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Newsletter</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="entry-info border-top pt-3 mt-5">
+            <span>© 2026 Anómala</span>
+            <span><a href="privacidad.html">Privacidad</a> · <a href="#">Términos</a> · <a href="#">Créditos</a></span>
+            <span>Desarrollado por <a href="https://maggiore.cl" target="_blank" rel="noopener">Maggiore</a></span>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
