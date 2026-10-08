@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Cartelera · Anómala</title>
+    <title>Las cosas que no dijimos · Cartelera · Anómala</title>
     <!-- Fuentes: Typekit (títulos) y Google Fonts (texto). preconnect adelanta la conexión -->
     <link rel="preconnect" href="https://use.typekit.net" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -133,172 +133,89 @@
       </div>
 
       <!--
-        CARTELERA COMPLETA (en WordPress: archive-evento.php)
-        · "Evento" como tipo de contenido propio, con campos: fecha, disciplina, lugar, ciudad, horario/precio y enlace externo.
-        · Solo eventos desde hoy en adelante, ordenados por fecha y agrupados por mes ([data-grupo]).
-        · El filtro por disciplina lo hace script.js; si un mes queda sin eventos, se oculta.
+        EVENTO (en WordPress: single-evento.php)
+        Tipo de contenido "Evento" con campos personalizados: fecha, horario, lugar, dirección, ciudad,
+        precio, organizador, disciplina y enlace externo. La ficha se arma con esos campos; la descripción
+        es el contenido del editor (the_content). El evento no lo organiza Anómala: el botón lleva al organizador.
       -->
-      <section id="cartelera">
+      <article>
         <div class="container-fluid">
-          <h1>Cartelera</h1>
-          <p class="lead">Obras, conciertos, muestras y funciones que nos parecen valiosas, aunque no las organicemos nosotros.</p>
+          <div class="row g-5">
+            <div class="col-12 col-lg-8">
+              <header>
+                <p class="mb-2"><a class="etiqueta" href="cartelera.html">Cartelera</a> · <span class="etiqueta" style="--d: var(--ui-highlight)">Teatro</span></p>
+                <h1>Las cosas que no dijimos</h1>
+                <p class="lead">Una obra sobre tres hermanas que vuelven a la casa familiar y descubren lo que nadie se atrevió a contar.</p>
+              </header>
 
-          <div class="filtros" role="group" aria-label="Filtrar por disciplina">
-            <button type="button" class="is-active" data-filtro="todo" aria-pressed="true">Todo</button>
-            <button type="button" data-filtro="teatro" aria-pressed="false">Teatro</button>
-            <button type="button" data-filtro="musica" aria-pressed="false">Música</button>
-            <button type="button" data-filtro="artes-visuales" aria-pressed="false">Artes visuales</button>
-            <button type="button" data-filtro="cine" aria-pressed="false">Cine</button>
-            <button type="button" data-filtro="danza" aria-pressed="false">Danza</button>
-          </div>
+              <!-- Imagen del evento (the_post_thumbnail) -->
+              <figure class="my-4">
+                <div class="entry-img">
+                  <img class="entry-photo" src="https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=1600&q=70" alt="Siluetas de tres actrices sobre un escenario" />
+                </div>
+                <figcaption class="entry-info">Imagen de referencia. Foto: Unsplash</figcaption>
+              </figure>
 
-          <div class="mb-5" data-grupo>
-            <h2 class="h3">Octubre 2026</h2>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4" data-cartelera>
-              <div class="col" data-disciplina="teatro">
-                <article class="evento" style="--d: var(--ui-highlight)">
-                  <time class="evento-fecha" datetime="2026-10-09">Vie<b>09</b>oct</time>
-                  <div class="entry-content">
-                    <span class="etiqueta">Teatro</span>
-                    <h3>Las cosas que no dijimos</h3>
-                    <div class="entry-info"><span>Sala Teatro del Puente · Santiago</span><span>20:00 · desde $6.000</span></div>
-                    <a href="single-evento.html">Ver ficha →</a>
-                  </div>
-                </article>
+              <!-- Ficha del evento -->
+              <dl class="row g-0 mb-4">
+                <dt class="col-12 col-sm-3 etiqueta py-2 border-bottom">Fecha</dt>
+                <dd class="col-12 col-sm-9 mb-0 py-2 border-bottom"><time datetime="2026-10-09">Viernes 9 de octubre de 2026</time></dd>
+                <dt class="col-12 col-sm-3 etiqueta py-2 border-bottom">Horario</dt>
+                <dd class="col-12 col-sm-9 mb-0 py-2 border-bottom">20:00 h · duración aprox. 70 min</dd>
+                <dt class="col-12 col-sm-3 etiqueta py-2 border-bottom">Lugar</dt>
+                <dd class="col-12 col-sm-9 mb-0 py-2 border-bottom">Sala Teatro del Puente</dd>
+                <dt class="col-12 col-sm-3 etiqueta py-2 border-bottom">Dirección</dt>
+                <dd class="col-12 col-sm-9 mb-0 py-2 border-bottom">Parque Forestal s/n · Santiago</dd>
+                <dt class="col-12 col-sm-3 etiqueta py-2 border-bottom">Precio</dt>
+                <dd class="col-12 col-sm-9 mb-0 py-2 border-bottom">Desde $6.000 · descuento estudiantes</dd>
+                <dt class="col-12 col-sm-3 etiqueta py-2 border-bottom">Organiza</dt>
+                <dd class="col-12 col-sm-9 mb-0 py-2 border-bottom">Compañía La Trastienda</dd>
+              </dl>
+
+              <a class="btn-brand" href="#" target="_blank" rel="noopener">Más información y entradas ↗</a>
+
+              <!-- Descripción (the_content) -->
+              <div class="cuerpo mt-5">
+                <h2 class="h3">Sobre el evento</h2>
+                <p>Tres hermanas se reencuentran para vaciar la casa donde crecieron. Entre cajas y muebles aparecen cartas, fotos y silencios que obligan a revisar la historia familiar.</p>
+                <p>La obra se construyó a partir de entrevistas con familias de la zona y mezcla teatro y relato documental.</p>
+                <p class="entry-info">Información entregada por la organización del evento. Fechas y precios pueden cambiar: confírmalos en el sitio del organizador.</p>
               </div>
-              <div class="col" data-disciplina="musica">
+            </div>
+
+            <aside class="col-12 col-lg-4" aria-label="Más en la cartelera">
+              <h2 class="h3">Próximamente en cartelera</h2>
+              <div class="vstack gap-3">
                 <article class="evento" style="--d: var(--ui-success)">
                   <time class="evento-fecha" datetime="2026-10-10">Sáb<b>10</b>oct</time>
                   <div class="entry-content">
                     <span class="etiqueta">Música</span>
                     <h3>Cumbia de cerro: noche de bandas locales</h3>
-                    <div class="entry-info"><span>Centro cultural de barrio · Valparaíso</span><span>21:30 · $5.000</span></div>
-                    <a href="#" target="_blank" rel="noopener">Más info ↗</a>
+                    <div class="entry-info"><span>Centro cultural de barrio · Valparaíso</span></div>
                   </div>
                 </article>
-              </div>
-              <div class="col" data-disciplina="artes-visuales">
                 <article class="evento" style="--d: var(--ui-info)">
                   <time class="evento-fecha" datetime="2026-10-11">Dom<b>11</b>oct</time>
                   <div class="entry-content">
                     <span class="etiqueta">Artes visuales</span>
                     <h3>Archivo vivo: fotografía popular del sur</h3>
-                    <div class="entry-info"><span>Galería municipal · Concepción</span><span>Hasta el 30 nov · Gratis</span></div>
-                    <a href="#" target="_blank" rel="noopener">Más info ↗</a>
+                    <div class="entry-info"><span>Galería municipal · Concepción</span></div>
                   </div>
                 </article>
-              </div>
-              <div class="col" data-disciplina="cine">
                 <article class="evento" style="--d: var(--accent)">
                   <time class="evento-fecha" datetime="2026-10-14">Mié<b>14</b>oct</time>
                   <div class="entry-content">
                     <span class="etiqueta">Cine</span>
                     <h3>Ciclo de documental chileno: cuerpos y territorio</h3>
-                    <div class="entry-info"><span>Cineclub universitario · Temuco</span><span>19:00 · Gratis</span></div>
-                    <a href="#" target="_blank" rel="noopener">Más info ↗</a>
+                    <div class="entry-info"><span>Cineclub universitario · Temuco</span></div>
                   </div>
                 </article>
               </div>
-              <div class="col" data-disciplina="danza">
-                <article class="evento" style="--d: var(--ui-highlight)">
-                  <time class="evento-fecha" datetime="2026-10-17">Sáb<b>17</b>oct</time>
-                  <div class="entry-content">
-                    <span class="etiqueta">Danza</span>
-                    <h3>Suelo: danza contemporánea en espacio público</h3>
-                    <div class="entry-info"><span>Plaza central · Antofagasta</span><span>18:00 · Gratis</span></div>
-                    <a href="#" target="_blank" rel="noopener">Más info ↗</a>
-                  </div>
-                </article>
-              </div>
-              <div class="col" data-disciplina="musica">
-                <article class="evento" style="--d: var(--ui-success)">
-                  <time class="evento-fecha" datetime="2026-10-18">Dom<b>18</b>oct</time>
-                  <div class="entry-content">
-                    <span class="etiqueta">Música</span>
-                    <h3>Cuerdas del norte: guitarra y charango</h3>
-                    <div class="entry-info"><span>Teatro regional · La Serena</span><span>20:00 · desde $8.000</span></div>
-                    <a href="#" target="_blank" rel="noopener">Más info ↗</a>
-                  </div>
-                </article>
-              </div>
-              <div class="col" data-disciplina="teatro">
-                <article class="evento" style="--d: var(--ui-highlight)">
-                  <time class="evento-fecha" datetime="2026-10-22">Jue<b>22</b>oct</time>
-                  <div class="entry-content">
-                    <span class="etiqueta">Teatro</span>
-                    <h3>Cocina de barrio: teatro documental</h3>
-                    <div class="entry-info"><span>Centro cultural · Concepción</span><span>19:30 · $4.000</span></div>
-                    <a href="#" target="_blank" rel="noopener">Más info ↗</a>
-                  </div>
-                </article>
-              </div>
-              <div class="col" data-disciplina="musica">
-                <article class="evento" style="--d: var(--ui-success)">
-                  <time class="evento-fecha" datetime="2026-10-25">Dom<b>25</b>oct</time>
-                  <div class="entry-content">
-                    <span class="etiqueta">Música</span>
-                    <h3>Coros populares en el parque</h3>
-                    <div class="entry-info"><span>Parque comunal · Santiago</span><span>17:00 · Gratis</span></div>
-                    <a href="#" target="_blank" rel="noopener">Más info ↗</a>
-                  </div>
-                </article>
-              </div>
-            </div>
+              <a class="btn-brand mt-3" href="cartelera.html">Ver cartelera completa</a>
+            </aside>
           </div>
-
-          <div class="mb-5" data-grupo>
-            <h2 class="h3">Noviembre 2026</h2>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4" data-cartelera>
-              <div class="col" data-disciplina="cine">
-                <article class="evento" style="--d: var(--accent)">
-                  <time class="evento-fecha" datetime="2026-11-05">Jue<b>05</b>nov</time>
-                  <div class="entry-content">
-                    <span class="etiqueta">Cine</span>
-                    <h3>Cine bajo las estrellas: cortometrajes regionales</h3>
-                    <div class="entry-info"><span>Explanada del museo · Antofagasta</span><span>21:00 · Gratis</span></div>
-                    <a href="#" target="_blank" rel="noopener">Más info ↗</a>
-                  </div>
-                </article>
-              </div>
-              <div class="col" data-disciplina="danza">
-                <article class="evento" style="--d: var(--ui-highlight)">
-                  <time class="evento-fecha" datetime="2026-11-08">Dom<b>08</b>nov</time>
-                  <div class="entry-content">
-                    <span class="etiqueta">Danza</span>
-                    <h3>Cueca urbana: muestra y baile abierto</h3>
-                    <div class="entry-info"><span>Mercado municipal · Valparaíso</span><span>18:30 · Gratis</span></div>
-                    <a href="#" target="_blank" rel="noopener">Más info ↗</a>
-                  </div>
-                </article>
-              </div>
-              <div class="col" data-disciplina="teatro">
-                <article class="evento" style="--d: var(--ui-highlight)">
-                  <time class="evento-fecha" datetime="2026-11-14">Sáb<b>14</b>nov</time>
-                  <div class="entry-content">
-                    <span class="etiqueta">Teatro</span>
-                    <h3>Las voces del sur: lectura dramatizada</h3>
-                    <div class="entry-info"><span>Biblioteca regional · Valdivia</span><span>19:00 · Gratis</span></div>
-                    <a href="#" target="_blank" rel="noopener">Más info ↗</a>
-                  </div>
-                </article>
-              </div>
-              <div class="col" data-disciplina="artes-visuales">
-                <article class="evento" style="--d: var(--ui-info)">
-                  <time class="evento-fecha" datetime="2026-11-21">Sáb<b>21</b>nov</time>
-                  <div class="entry-content">
-                    <span class="etiqueta">Artes visuales</span>
-                    <h3>Bordados de memoria: muestra colectiva</h3>
-                    <div class="entry-info"><span>Centro cultural · Temuco</span><span>Hasta el 20 dic · Gratis</span></div>
-                    <a href="#" target="_blank" rel="noopener">Más info ↗</a>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </div>
-
-          <p data-cartelera-vacia hidden>No hay eventos de esta disciplina en las próximas semanas.</p>
         </div>
-      </section>
+      </article>
 
       <!-- Newsletter. Conectar el formulario al proveedor de correo que usen (Mailchimp, Substack, etc.) -->
       <section>
