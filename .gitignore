@@ -1,0 +1,26 @@
+# Respaldo de la versión anterior (solo local)
+referencia-v1/
+
+# Archivos fuente de diseño (pesados, no los usa la maqueta)
+*.psd
+*.psb
+ELEMENTOS/
+recortes/
+insumos contexto/
+*.pdf
+papelrasgado1.png
+papelrasgado2.png
+papel-rasgado.png
+papel-rasgado2.png
+papel-rasgado3.png
+rasgado-bottom.png
+rasgado-top.png
+asterisco.png
+Sin título-1.png
+style-DESKTOP-MOOV6E7.css
+
+# Local
+.claude/
+Thumbs.db
+desktop.ini
+.DS_Store

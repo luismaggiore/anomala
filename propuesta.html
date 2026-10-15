@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Anómala · Propuesta de home</title>
+    <!-- Fuentes: Typekit (títulos) y Google Fonts (texto). preconnect adelanta la conexión -->
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://use.typekit.net/aie8ork.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <link href="propuesta.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main>
+      <div class="d-flex flex-column">
+        <header >
+          <div class="image-hero">
+            <!--
+              COLLAGE DEL HERO — cada recorte se ajusta con su atributo style:
+                --x  borde izquierdo, en % del ancho del collage (negativo = se sale por la izquierda)
+                --y  borde superior, en % del alto del collage (negativo = se sale por arriba)
+                --w  ancho, en % del ancho del collage (el alto se calcula solo)
+                --r  giro en grados (negativo = antihorario)
+                --z  capa: número más alto queda encima
+              Atajo: abre home-page.html#editar para moverlos con el mouse y copiar los valores.
+            -->
+            <div class="hero-collage" aria-hidden="true">
+              <img src="recortes-psd/poema2.png" alt="" style="--x: -4; --y: -62; --w: 27; --r: 0; --z: 1" />
+              <img src="recortes-psd/san-pedro.png" alt="" style="--x: -1.5; --y: 8; --w: 33; --r: -1; --z: 3" />
+              <img src="recortes-psd/mar.png" alt="" style="--x: 19; --y: -16; --w:26; --r: 0; --z: 2" />
+              <img src="recortes-psd/poema1.png" alt="" style="--x: 42; --y: -17; --w: 26; --r: 0; --z: 3" />
+              <img src="recortes-psd/cordillera.png" alt="" style="--x: 34; --y: 20; --w: 30; --r: 0; --z: 4" />
+              <img src="recortes-psd/cordillera.png" alt="" style="--x: 71; --y: -16; --w: 22; --r: 3; --z: 2" />
+              <img src="recortes-psd/bosque.png" alt="" style="--x: 60; --y: -20; --w: 26; --r: 0; --z: 4" />
+              <img src="recortes-psd/estrellas.png" alt="" style="--x: 78.5; --y: -20; --w: 25; --r: 0; --z:3" />
+              <!-- Personajes: van encima del paisaje (capas 6 en adelante) -->
+              <img src="recortes-psd/personajes/cueca.png" alt="" style="--x: 9.6; --y: 0.7; --w: 13.75; --r: 0; --z: 6" />
+              <img src="recortes-psd/personajes/guitarrista.png" alt="" style="--x: 45.6; --y: 9.3; --w: 26.25; --r: 0; --z: 7" />
+              <img src="recortes-psd/personajes/futbol.png" alt="" style="--x: 20.6; --y: 19.8; --w: 9.4; --r: 0; --z: 7" />
+              <img src="recortes-psd/personajes/vinilos.png" alt="" style="--x: 24.1; --y: 24; --w: 18.75; --r: 0; --z: 6" />
+              <img src="recortes-psd/personajes/huemul.png" alt="" style="--x: 29.5; --y: 24; --w: 20; --r: 0; --z: 8" />
+              <img src="recortes-psd/personajes/dance.png" alt="" style="--x: 64.75; --y: 13.6; --w: 27.5; --r: 0; --z: 6" />
+              <img src="recortes-psd/personajes/actor.png" alt="" style="--x: 67.3; --y: 29.3; --w: 21.9; --r: 0; --z: 8" />
+              <img src="recortes-psd/personajes/violinist.png" alt="" style="--x: 81.9; --y: 33.5; --w: 21.25; --r: 0; --z: 9" />
+            </div>
+            <img class="hero-tear" src="rasgado-bottom.webp" alt="" />
+          </div>
+
+          <div class="container-fluid">
+            <div class="row align-items-center g-5">
+              <div class="col-12 col-lg-7">
+                <svg
+                  id="Capa_1"
+                  class="brand-logo"
+                  data-name="Capa 1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 44.97 7.2"
+                  role="img"
+                  aria-label="Anómala"
+                >
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill: #fff;
+                      }
+
+                      .cls-2 {
+                        fill: #a020f0;
+                      }
+                    </style>
+                  </defs>
+                  <path
+                    class="cls-1"
+                    d="M42.38.25h-2.67l-1.86,4.87h-1.82V.25h-2.38v4.75s-1.77-4.75-1.77-4.75h-2.68l-1.83,4.76V.25h-2.47l-1.29,2.27v-.02s-1.44-2.25-1.44-2.25h0s-2.54,0-2.54,0v.94c.52.67.84,1.52.84,2.44s-.32,1.78-.85,2.46v.98s2.56,0,2.56,0v-1.94l1.38,1.94,1.5-1.94v1.94s1.42,0,1.42,0h2.62l.32-.84h2.21l.32.83h1.71s2.4,0,2.4,0h3.61l.32-.84h2.2l.32.83h2.47l-2.59-6.81ZM29.84,4.6l.67-2.11.63,2.11h-1.31ZM40.41,4.6l.66-2.09.66,2.09h-1.32Z"
+                  />
+                  <path
+                    class="cls-1"
+                    d="M11.06,2.9l-1.81-2.65h-2.04l-.08,4.68L5.35.25h-2.61L0,7.07h2.62l.32-.84h2.21l.32.83h3.93s0-2.79,0-2.79l1.85,2.79h2.18v-.91c-.57-.69-.92-1.57-.92-2.54s.34-1.85.92-2.54V.25h-2.35v2.65ZM3.38,4.6l.66-2.09.65,2.09h-1.3Z"
+                  />
+                  <path
+                    class="cls-2"
+                    d="M19.54,1.69c-.64-1.01-1.76-1.69-3.05-1.69s-2.33.62-2.98,1.57c-.39.58-.63,1.28-.63,2.03s.23,1.45.63,2.03c.65.95,1.74,1.57,2.98,1.57s2.4-.67,3.04-1.67c.36-.56.56-1.22.56-1.93s-.21-1.36-.55-1.91"
+                  />
+                </svg>
+              </div>
+              <div class="col-12 col-lg-5">
+                <h1>Busquemos lo que todavía no tiene nombre.</h1>
+                <p class="lead">
+                  Periodismo, creación y pensamiento crítico para leer la
+                  cultura como el lugar donde una sociedad crea, discute,
+                  recuerda y proyecta su futuro.
+                </p>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- NAV: formatos (qué tipo de pieza) separados de lo institucional; debajo, los 7 ejes de la Brújula -->
+        <nav
+          class="navbar navbar-expand-lg mid-nav p-nav order-first order-lg-0"
+          data-bs-theme="dark"
+          aria-label="Navegación principal"
+        >
+          <div class="container-fluid">
+            <button
+              class="navbar-toggler ms-auto"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#p-menu"
+              aria-controls="p-menu"
+              aria-expanded="false"
+              aria-label="Abrir menú"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse flex-column align-items-stretch" id="p-menu">
+              <div class="p-nav-row">
+                <ul class="navbar-nav p-formatos" aria-label="Formatos">
+                  <li class="nav-item"><a class="nav-link" href="#">Reportajes</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Entrevistas</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Conversaciones</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Crónicas</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Columnas</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Explicadores</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Ensayos visuales y sonoros</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#radar">Radar</a></li>
+                </ul>
+                <div class="p-nav-util">
+                  <form class="p-search" role="search" onsubmit="return false">
+                    <label class="visually-hidden" for="p-q">Buscar</label>
+                    <input id="p-q" type="search" placeholder="Buscar" />
+                  </form>
+                  <a class="nav-link" href="#cartelera">Cartelera</a>
+                  <a class="nav-link" href="quienes-somos.html">Quiénes somos</a>
+                  <a class="p-btn p-btn-pink" href="#apoya">Apoya</a>
+                </div>
+              </div>
+              <ul class="navbar-nav p-ejes" aria-label="Ejes">
+                <li><a class="c-lime" href="#ejes">Cultura y creación</a></li>
+                <li><a class="c-pink" href="#ejes">Política cultural</a></li>
+                <li><a class="c-cyan" href="#ejes">Sociedad y vida cotidiana</a></li>
+                <li><a class="c-violet" href="#ejes">Tendencias y cultura digital</a></li>
+                <li><a class="c-lime" href="#ejes">Industrias culturales</a></li>
+                <li><a class="c-pink" href="#ejes">Territorios y comunidades</a></li>
+                <li><a class="c-cyan" href="#ejes">Cultura popular</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <!--
+        01 PORTADA
+        · Carrusel  = PORTADA: lo elige el equipo a mano. Máx. 3. La 1ª es la más importante. Sin avance automático.
+        · Lateral   = ÚLTIMAS: automático, las 4 más recientes, EXCLUYENDO las que están en la portada.
+        · Columna   = MÁS LEÍDAS: automático, top 5 de los últimos 7 días.
+      -->
+      <section class="p-section">
+        <div class="container-fluid">
+          <div class="row g-5">
+            <div class="col-12 col-lg-6">
+              <div class="p-kicker"><span>01</span> Portada</div>
+              <div id="destacados" class="carousel slide main-carousel" data-bs-ride="false" data-bs-interval="false">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#destacados" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Portada 1"></button>
+                  <button type="button" data-bs-target="#destacados" data-bs-slide-to="1" aria-label="Portada 2"></button>
+                  <button type="button" data-bs-target="#destacados" data-bs-slide-to="2" aria-label="Portada 3"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <a class="main-entry" href="#">
+                      <img class="entry-photo" src="https://images.unsplash.com/photo-1757085242652-f8cd4d3de889?auto=format&fit=crop&w=1400&q=70" alt="Personas pintando alrededor de una mesa en un taller comunitario" />
+                      <div class="main-entry-content">
+                        <span class="entry-cat"><span class="category">Reportaje</span><span class="category cat-pink">Territorios</span></span>
+                        <h3>Fuera del mapa: la cultura que se sostiene sin fondos ni foco</h3>
+                        <p>Recorrimos centros comunitarios en cinco regiones para entender cómo se programa, se financia y se cuida la cultura lejos de Santiago.</p>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="carousel-item">
+                    <a class="main-entry" href="#">
+                      <img class="entry-photo" src="https://images.unsplash.com/photo-1504609813442-a8924e83f76e?auto=format&fit=crop&w=1400&q=70" alt="Grupo de personas bailando de noche" />
+                      <div class="main-entry-content">
+                        <span class="entry-cat"><span class="category">Crónica</span><span class="category cat-cyan">Cultura popular</span></span>
+                        <h3>Bailar para quedarse: una noche en la fiesta del barrio</h3>
+                        <p>Cumbia, cueca y cocina compartida: crónica de los espacios donde la comunidad se encuentra cuando cae el sol.</p>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="carousel-item">
+                    <a class="main-entry" href="#">
+                      <img class="entry-photo" src="https://images.unsplash.com/photo-1572887069547-4b5b4771a069?auto=format&fit=crop&w=1400&q=70" alt="Edificio amarillo con un mural junto a la calle" />
+                      <div class="main-entry-content">
+                        <span class="entry-cat"><span class="category">Explicador</span><span class="category cat-pink">Política cultural</span></span>
+                        <h3>Muros que hablan: quién decide el arte en la calle</h3>
+                        <p>Permisos, colectivos y municipios: cómo se negocia (y se borra) el muralismo en las ciudades.</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#destacados" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#destacados" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Siguiente</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-4">
+              <div class="p-kicker"><span>02</span> Últimas</div>
+              <div class="horizontal">
+                <a class="entry-card" href="#">
+                  <div class="entry-img"><img class="entry-photo" src="https://images.unsplash.com/photo-1583521214690-73421a1829a9?auto=format&fit=crop&w=600&q=70" alt="Pilas de documentos y carpetas de archivo" /></div>
+                  <div class="entry-content">
+                    <div class="p-meta"><span class="c-lime">Entrevista</span><time datetime="2026-10-06T13:00">hace 2 h</time></div>
+                    <h3>“El archivo también es un lugar de disputa”</h3>
+                    <div class="entry-info"><span>por Ricardo González</span></div>
+                  </div>
+                </a>
+                <a class="entry-card" href="#">
+                  <div class="entry-img"><img class="entry-photo" src="https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=600&q=70" alt="Siluetas de tres artistas sobre un escenario" /></div>
+                  <div class="entry-content">
+                    <div class="p-meta"><span class="c-lime">Crónica</span><time datetime="2026-10-06T09:00">hace 6 h</time></div>
+                    <h3>Hacer teatro con lo que hay</h3>
+                    <div class="entry-info"><span>por Camila Rojas</span></div>
+                  </div>
+                </a>
+                <a class="entry-card" href="#">
+                  <div class="entry-img"><img class="entry-photo" src="https://images.unsplash.com/photo-1603048588665-791ca8aea617?auto=format&fit=crop&w=600&q=70" alt="Disco de vinilo girando en un tocadiscos" /></div>
+                  <div class="entry-content">
+                    <div class="p-meta"><span class="c-lime">Conversación</span><time datetime="2026-10-05">ayer</time></div>
+                    <h3>La música que no llega a las playlists</h3>
+                    <div class="entry-info"><span>por Tomás Fuentes</span></div>
+                  </div>
+                </a>
+                <a class="entry-card" href="#">
+                  <div class="entry-img"><img class="entry-photo" src="https://images.unsplash.com/photo-1671535108620-d169ce916f09?auto=format&fit=crop&w=600&q=70" alt="Bordado sobre tela negra junto a unas tijeras" /></div>
+                  <div class="entry-content">
+                    <div class="p-meta"><span class="c-lime">Ensayo visual</span><time datetime="2026-10-04">hace 2 días</time></div>
+                    <h3>Bordar para no olvidar</h3>
+                    <div class="entry-info"><span>por Javiera Muñoz</span></div>
+                  </div>
+                </a>
+              </div>
+              <a class="p-more" href="#">Ver todas las publicaciones →</a>
+            </div>
+
+            <div class="col-12 col-lg-2">
+              <div class="p-kicker"><span>03</span> Más leídas</div>
+              <ol class="p-ranking">
+                <li><a href="#">El fútbol también es cultura (y deberíamos tratarlo así)</a></li>
+                <li><a href="#">Fondos concursables: lo que cambia en la próxima convocatoria</a></li>
+                <li><a href="#">Fuera del mapa: la cultura que se sostiene sin fondos ni foco</a></li>
+                <li><a href="#">Lo que la IA no sabe sobre ilustrar</a></li>
+                <li><a href="#">Bailar para quedarse: una noche en la fiesta del barrio</a></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RADAR: piezas cortas (formato 08). Se actualiza cada semana desde la reunión de pauta. -->
+      <section class="p-section p-radar" id="radar">
+        <div class="container-fluid">
+          <div class="p-head">
+            <div>
+              <div class="p-kicker"><span>04</span> Radar</div>
+              <h2>Señales de la semana</h2>
+            </div>
+            <p>Lo que empieza a moverse antes de tener nombre: escenas, obras y conversaciones que vale la pena mirar de cerca.</p>
+          </div>
+          <ol class="p-signals">
+            <li>
+              <span class="p-tag c-violet">Cultura digital</span>
+              <p>Los clubes de lectura migran de Instagram a canales de WhatsApp barriales.</p>
+              <a href="#">Ver señal →</a>
+            </li>
+            <li>
+              <span class="p-tag c-pink">Territorios</span>
+              <p>En Chiloé, tres festivales comparten producción para abaratar costos.</p>
+              <a href="#">Ver señal →</a>
+            </li>
+            <li>
+              <span class="p-tag c-cyan">Cultura popular</span>
+              <p>La cumbia ranchera vuelve a las fiestas universitarias, y no como ironía.</p>
+              <a href="#">Ver señal →</a>
+            </li>
+            <li>
+              <span class="p-tag c-lime">Creación</span>
+              <p>Ilustradores jóvenes firman cartas de autoría frente a la generación de imágenes.</p>
+              <a href="#">Ver señal →</a>
+            </li>
+            <li>
+              <span class="p-tag c-pink">Política cultural</span>
+              <p>Municipios del norte crean mesas de cultura con organizaciones migrantes.</p>
+              <a href="#">Ver señal →</a>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!--
+        CARTELERA: eventos externos (no organizados por Anómala) que el equipo va cargando.
+        Cada evento es una .col con data-disciplina (para el filtro). --d define el color de la disciplina.
+        Mostrar solo próximos eventos, ordenados por fecha. "Más info" enlaza a la fuente externa.
+        Para sumar una disciplina: un botón en .filtros con data-filtro="..." y el mismo valor en los eventos.
+      -->
+      <section id="cartelera">
+        <div class="container-fluid">
+          <h2>Cartelera</h2>
+          <p>Obras, conciertos, muestras y funciones que nos parecen valiosas, aunque no las organicemos nosotros.</p>
+
+          <div class="filtros" role="group" aria-label="Filtrar por disciplina">
+            <button type="button" class="is-active" data-filtro="todo" aria-pressed="true">Todo</button>
+            <button type="button" data-filtro="teatro" aria-pressed="false">Teatro</button>
+            <button type="button" data-filtro="musica" aria-pressed="false">Música</button>
+            <button type="button" data-filtro="artes-visuales" aria-pressed="false">Artes visuales</button>
+            <button type="button" data-filtro="cine" aria-pressed="false">Cine</button>
+            <button type="button" data-filtro="danza" aria-pressed="false">Danza</button>
+          </div>
+
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" data-cartelera>
+            <div class="col" data-disciplina="teatro">
+              <article class="evento" style="--d: var(--ui-highlight)">
+                <time class="evento-fecha" datetime="2026-10-09">Vie<b>09</b>oct</time>
+                <div class="entry-content">
+                  <span class="etiqueta">Teatro</span>
+                  <h3>Las cosas que no dijimos</h3>
+                  <div class="entry-info"><span>Sala Teatro del Puente · Santiago</span><span>20:00 · desde $6.000</span></div>
+                  <a href="#" target="_blank" rel="noopener">Más info ↗</a>
+                </div>
+              </article>
+            </div>
+            <div class="col" data-disciplina="musica">
+              <article class="evento" style="--d: var(--ui-success)">
+                <time class="evento-fecha" datetime="2026-10-10">Sáb<b>10</b>oct</time>
+                <div class="entry-content">
+                  <span class="etiqueta">Música</span>
+                  <h3>Cumbia de cerro: noche de bandas locales</h3>
+                  <div class="entry-info"><span>Centro cultural de barrio · Valparaíso</span><span>21:30 · $5.000</span></div>
+                  <a href="#" target="_blank" rel="noopener">Más info ↗</a>
+                </div>
+              </article>
+            </div>
+            <div class="col" data-disciplina="artes-visuales">
+              <article class="evento" style="--d: var(--ui-info)">
+                <time class="evento-fecha" datetime="2026-10-11">Dom<b>11</b>oct</time>
+                <div class="entry-content">
+                  <span class="etiqueta">Artes visuales</span>
+                  <h3>Archivo vivo: fotografía popular del sur</h3>
+                  <div class="entry-info"><span>Galería municipal · Concepción</span><span>Hasta el 30 nov · Gratis</span></div>
+                  <a href="#" target="_blank" rel="noopener">Más info ↗</a>
+                </div>
+              </article>
+            </div>
+            <div class="col" data-disciplina="cine">
+              <article class="evento" style="--d: var(--accent)">
+                <time class="evento-fecha" datetime="2026-10-14">Mié<b>14</b>oct</time>
+                <div class="entry-content">
+                  <span class="etiqueta">Cine</span>
+                  <h3>Ciclo de documental chileno: cuerpos y territorio</h3>
+                  <div class="entry-info"><span>Cineclub universitario · Temuco</span><span>19:00 · Gratis</span></div>
+                  <a href="#" target="_blank" rel="noopener">Más info ↗</a>
+                </div>
+              </article>
+            </div>
+            <div class="col" data-disciplina="danza">
+              <article class="evento" style="--d: var(--ui-highlight)">
+                <time class="evento-fecha" datetime="2026-10-17">Sáb<b>17</b>oct</time>
+                <div class="entry-content">
+                  <span class="etiqueta">Danza</span>
+                  <h3>Suelo: danza contemporánea en espacio público</h3>
+                  <div class="entry-info"><span>Plaza central · Antofagasta</span><span>18:00 · Gratis</span></div>
+                  <a href="#" target="_blank" rel="noopener">Más info ↗</a>
+                </div>
+              </article>
+            </div>
+            <div class="col" data-disciplina="musica">
+              <article class="evento" style="--d: var(--ui-success)">
+                <time class="evento-fecha" datetime="2026-10-18">Dom<b>18</b>oct</time>
+                <div class="entry-content">
+                  <span class="etiqueta">Música</span>
+                  <h3>Cuerdas del norte: guitarra y charango</h3>
+                  <div class="entry-info"><span>Teatro regional · La Serena</span><span>20:00 · desde $8.000</span></div>
+                  <a href="#" target="_blank" rel="noopener">Más info ↗</a>
+                </div>
+              </article>
+            </div>
+          </div>
+          <p data-cartelera-vacia hidden>No hay eventos de esta disciplina en las próximas semanas.</p>
+          <a class="link-mas" href="#">Ver cartelera completa →</a>
+        </div>
+      </section>
+
+      <!-- EN PROFUNDIDAD: una pieza de agenda propia (40% de la Brújula), elegida a mano, con portada en collage. -->
+      <section class="p-section p-especial">
+        <div class="container-fluid">
+          <div class="row g-5 align-items-center">
+            <div class="col-12 col-lg-6">
+              <!-- Mismo sistema que el hero: --x, --y, --w en % del recuadro; --r giro -->
+              <div class="p-especial-art" aria-hidden="true">
+                <img src="recortes-psd/san-pedro.png" alt="" style="--x: 0; --y: 8; --w: 62; --r: -4" />
+                <img src="recortes-psd/bosque.png" alt="" style="--x: 42; --y: 0; --w: 56; --r: 5" />
+                <img src="recortes-psd/personajes/huemul.png" alt="" style="--x: 30; --y: 34; --w: 38; --r: 0" />
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="p-kicker"><span>06</span> En profundidad · Reportaje</div>
+              <h2 class="p-especial-title">Fuera del mapa: la cultura que se sostiene sin fondos ni foco</h2>
+              <p class="p-lead">Recorrimos centros comunitarios en cinco regiones para entender cómo se programa, se financia y se cuida la cultura lejos de Santiago.</p>
+              <div class="entry-info p-especial-info"><span>por Ricardo González</span><span>25 min de lectura</span></div>
+              <a class="p-btn p-btn-violet" href="#">Leer el reportaje</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PARA LEER CON TIEMPO: contenidos de fondo (30%). Selección editorial que no envejece en semanas. -->
+      <section class="p-section">
+        <div class="container-fluid">
+          <div class="p-head">
+            <div>
+              <div class="p-kicker"><span>07</span> Fondo</div>
+              <h2>Para leer con tiempo</h2>
+            </div>
+            <p>Piezas largas que siguen vigentes: para guardar, volver y discutir.</p>
+          </div>
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 entry-grid">
+            <div class="col">
+              <a class="entry-card" href="#">
+                <div class="entry-cat"><span class="category">Entrevista</span><span class="category cat-lime">Creación</span></div>
+                <div class="entry-img">
+                  <img class="entry-photo" src="https://images.unsplash.com/photo-1569309338532-a0c01062acc8?auto=format&fit=crop&w=800&q=70" alt="Mano dibujando con lápiz sobre papel" />
+                  <img src="papel-rasgado.webp" class="rasgado-total" alt="" />
+                </div>
+                <div class="entry-content">
+                  <span class="anomala-icon" aria-hidden="true"></span>
+                  <h3>Lo que la IA no sabe sobre ilustrar</h3>
+                  <div class="entry-info"><span>por Ricardo González</span><span>14 min de lectura</span></div>
+                  <p>Una ilustradora sobre autoría, encargos y el valor del trazo propio en tiempos de imágenes generadas.</p>
+                </div>
+              </a>
+            </div>
+            <div class="col">
+              <a class="entry-card" href="#">
+                <div class="entry-cat"><span class="category">Columna</span><span class="category cat-cyan">Cultura popular</span></div>
+                <div class="entry-img">
+                  <img class="entry-photo" src="https://images.unsplash.com/photo-1665413811870-5b29a250f64a?auto=format&fit=crop&w=800&q=70" alt="Hinchada en las graderías de un estadio" />
+                  <img src="papel-rasgado2.webp" class="rasgado-total" alt="" />
+                </div>
+                <div class="entry-content">
+                  <span class="anomala-icon" aria-hidden="true"></span>
+                  <h3>El fútbol también es cultura (y deberíamos tratarlo así)</h3>
+                  <div class="entry-info"><span>por Andrés Vidal</span><span>9 min de lectura</span></div>
+                  <p>Barrios, hinchadas y memoria: por qué la política cultural sigue mirando hacia otro lado.</p>
+                </div>
+              </a>
+            </div>
+            <div class="col">
+              <a class="entry-card" href="#">
+                <div class="entry-cat"><span class="category">Reportaje</span><span class="category cat-lime">Industrias</span></div>
+                <div class="entry-img">
+                  <img class="entry-photo" src="https://images.unsplash.com/photo-1603796846097-bee99e4a601f?auto=format&fit=crop&w=800&q=70" alt="Persona completando formularios sobre una mesa" />
+                  <img src="papel-rasgado3.webp" class="rasgado-total" alt="" />
+                </div>
+                <div class="entry-content">
+                  <span class="anomala-icon" aria-hidden="true"></span>
+                  <h3>Vivir del arte en Chile: cuentas que no cuadran</h3>
+                  <div class="entry-info"><span>por Fernanda Soto</span><span>22 min de lectura</span></div>
+                  <p>Boletas, proyectos y segundos empleos: cómo se gana la vida quien trabaja en cultura.</p>
+                </div>
+              </a>
+            </div>
+            <div class="col">
+              <a class="entry-card" href="#">
+                <div class="entry-cat"><span class="category">Crónica</span><span class="category cat-cyan">Sociedad</span></div>
+                <div class="entry-img">
+                  <img class="entry-photo" src="https://images.unsplash.com/photo-1569783721854-33a99b4c0bae?auto=format&fit=crop&w=800&q=70" alt="Público frente a una pintura en una exposición" />
+                  <img src="papel-rasgado.webp" class="rasgado-total" alt="" />
+                </div>
+                <div class="entry-content">
+                  <span class="anomala-icon" aria-hidden="true"></span>
+                  <h3>Quién va a los museos (y quién no se siente invitado)</h3>
+                  <div class="entry-info"><span>por Javiera Muñoz</span><span>16 min de lectura</span></div>
+                  <p>Una semana mirando al público para entender las barreras que no aparecen en las encuestas.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EJES: los 7 campos de observación de la Brújula. Cada tarjeta muestra las 2 últimas piezas del eje. -->
+      <section class="p-section" id="ejes">
+        <div class="container-fluid">
+          <div class="p-head">
+            <div>
+              <div class="p-kicker"><span>08</span> Ejes</div>
+              <h2>¿Qué observamos?</h2>
+            </div>
+            <p>Siete campos de observación. Lo más interesante aparece en los cruces entre ellos.</p>
+          </div>
+          <div class="p-ejes-grid">
+            <article class="p-eje" style="--eje: var(--ui-success)">
+              <h3><a href="#">Cultura y creación</a></h3>
+              <p>Obras, procesos, lenguajes, escenas, crítica y circulación.</p>
+              <ul><li><a href="#">Lo que la IA no sabe sobre ilustrar</a></li><li><a href="#">Hacer teatro con lo que hay</a></li></ul>
+            </article>
+            <article class="p-eje" style="--eje: var(--ui-highlight)">
+              <h3><a href="#">Política cultural</a></h3>
+              <p>Instituciones, derechos, financiamiento, patrimonio, regulación y poder.</p>
+              <ul><li><a href="#">Fondos concursables: lo que cambia</a></li><li><a href="#">Muros que hablan</a></li></ul>
+            </article>
+            <article class="p-eje" style="--eje: var(--ui-info)">
+              <h3><a href="#">Sociedad y vida cotidiana</a></h3>
+              <p>Identidades, vínculos, generaciones, educación, cuidados y formas de habitar.</p>
+              <ul><li><a href="#">Quién va a los museos</a></li><li><a href="#">Bordar para no olvidar</a></li></ul>
+            </article>
+            <article class="p-eje" style="--eje: var(--accent)">
+              <h3><a href="#">Tendencias y cultura digital</a></h3>
+              <p>Tecnologías, plataformas, memes, comunidades, estéticas y comportamientos emergentes.</p>
+              <ul><li><a href="#">La música que no llega a las playlists</a></li><li><a href="#">Clubes de lectura en WhatsApp</a></li></ul>
+            </article>
+            <article class="p-eje" style="--eje: var(--ui-success)">
+              <h3><a href="#">Industrias culturales</a></h3>
+              <p>Trabajo, audiencias, empresas, modelos de negocio y sostenibilidad.</p>
+              <ul><li><a href="#">Vivir del arte en Chile</a></li><li><a href="#">El negocio de los festivales</a></li></ul>
+            </article>
+            <article class="p-eje" style="--eje: var(--ui-highlight)">
+              <h3><a href="#ejes">Territorios y comunidades</a></h3>
+              <p>Prácticas locales, memoria, descentralización, mediación y saberes comunitarios.</p>
+              <ul><li><a href="#">Fuera del mapa</a></li><li><a href="#">Atacama: festivales en el desierto</a></li></ul>
+            </article>
+            <article class="p-eje" style="--eje: var(--ui-info)">
+              <h3><a href="#">Cultura popular</a></h3>
+              <p>Música, fútbol, televisión, gastronomía, humor, moda y fenómenos masivos.</p>
+              <ul><li><a href="#">El fútbol también es cultura</a></li><li><a href="#">Bailar para quedarse</a></li></ul>
+            </article>
+            <!-- Los temas sueltos del antiguo "Explora" pasan a ser etiquetas dentro de los ejes -->
+            <article class="p-eje p-temas">
+              <h3>Temas</h3>
+              <div class="p-chips">
+                <a href="#">Música</a><a href="#">Artes visuales</a><a href="#">Cine</a><a href="#">Deporte</a><a href="#">Teatro</a><a href="#">Literatura</a><a href="#">Danza</a><a href="#">Fotografía</a><a href="#">Diseño</a><a href="#">Arquitectura y ciudad</a><a href="#">Patrimonio y memoria</a><a href="#">Oficios</a><a href="#">Gastronomía</a><a href="#">Moda</a><a href="#">Humor</a><a href="#">Televisión</a><a href="#">Videojuegos</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEWSLETTER: canal directo con la comunidad. Conectar al proveedor de correo (Mailchimp, Substack, etc.) -->
+      <section class="p-section">
+        <div class="container-fluid">
+          <div class="p-newsletter">
+            <div>
+              <div class="p-kicker"><span>09</span> Newsletter</div>
+              <!-- Nombre, frecuencia y contenido del newsletter: por definir por el equipo -->
+              <h2>Recibe Anómala en tu correo</h2>
+              <p>Lo que publicamos, directo a tu bandeja.</p>
+            </div>
+            <form class="p-subscribe" onsubmit="return false">
+              <label class="visually-hidden" for="p-mail">Tu correo</label>
+              <input id="p-mail" type="email" placeholder="tu@correo.cl" required />
+              <button class="p-btn p-btn-dark" type="submit">Suscribirme</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- PARA ENTENDER (formato 06 · Explicador) + COLUMNAS (formato 05): últimas piezas de cada formato -->
+      <section class="p-section">
+        <div class="container-fluid">
+          <div class="row g-5">
+            <div class="col-12 col-lg-6">
+              <div class="p-kicker"><span>10</span> Explicadores</div>
+              <h2 class="p-h2">Para entender</h2>
+              <ol class="p-explain">
+                <li><a href="#"><h3>¿Cómo funcionan los fondos de cultura?</h3><p>Quién postula, quién evalúa y por qué tantos proyectos quedan fuera.</p></a></li>
+                <li><a href="#"><h3>¿Qué es el patrimonio inmaterial?</h3><p>De la cueca a los oficios: qué se protege, cómo y para quién.</p></a></li>
+                <li><a href="#"><h3>Derechos de autor e IA, en simple</h3><p>Lo que dice la ley hoy y lo que todavía no sabe responder.</p></a></li>
+              </ol>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="p-kicker"><span>11</span> Columnas</div>
+              <h2 class="p-h2">Interpretaciones discutibles</h2>
+              <ul class="p-voces">
+                <li><a href="#"><div><small>por Andrés Vidal · Cultura popular</small><h3>El fútbol también es cultura (y deberíamos tratarlo así)</h3></div></a></li>
+                <li><a href="#"><div><small>por Fernanda Soto · Industrias culturales</small><h3>Nadie vive de la gratitud</h3></div></a></li>
+                <li><a href="#"><div><small>por Tomás Fuentes · Tendencias y cultura digital</small><h3>El algoritmo no tiene barrio</h3></div></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MANIFIESTO: qué es Anómala en una franja, para quien llega por primera vez -->
+      <section class="p-section p-manifiesto">
+        <div class="container-fluid">
+          <div class="p-kicker"><span>12</span> Una mirada propia</div>
+          <p class="p-manifiesto-lead">Anómala es una multiplataforma cultural y un laboratorio territorial que conecta periodismo, creación y pensamiento crítico.</p>
+          <ul class="p-movimientos">
+            <li class="c-lime"><b>Conectar</b><span>cultura, política, sociedad, tecnología y vida cotidiana.</span></li>
+            <li class="c-violet"><b>Desplazar</b><span>el punto de vista: quién habla, quién falta.</span></li>
+            <li class="c-pink"><b>Profundizar</b><span>con contexto, causas y consecuencias.</span></li>
+            <li class="c-cyan"><b>Traducir</b><span>lo complejo con lenguaje claro.</span></li>
+            <li class="c-lime"><b>Escuchar</b><span>saberes, comunidades y escenas.</span></li>
+            <li class="c-violet"><b>Experimentar</b><span>con formas narrativas.</span></li>
+          </ul>
+          <a class="p-more" href="#">Conoce quiénes somos →</a>
+        </div>
+      </section>
+
+      <!-- DONACIONES + TRANSPARENCIA: la Brújula pide independencia editorial y transparencia
+           en datos, fuentes, patrocinios, correcciones y procesos. El modelo de aporte: por definir. -->
+      <section class="p-section" id="apoya">
+        <div class="container-fluid">
+          <div class="p-support">
+            <div>
+              <div class="p-kicker"><span>13</span> Donaciones</div>
+              <h2>Apoya a Anómala</h2>
+              <p>Tu aporte ayuda a sostener un medio cultural con independencia editorial.</p>
+              <a class="p-btn p-btn-pink" href="#">Donar</a>
+            </div>
+            <ul class="p-transparency">
+              <li><a href="#">Cómo nos financiamos</a></li>
+              <li><a href="#">Patrocinios y alianzas</a></li>
+              <li><a href="#">Correcciones</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER completo -->
+    <footer class="p-footer">
+      <div class="container-fluid">
+        <div class="row g-5">
+          <div class="col-12 col-lg-4">
+            <svg class="p-footer-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44.97 7.2" role="img" aria-label="Anómala">
+              <path fill="#fff" d="M42.38.25h-2.67l-1.86,4.87h-1.82V.25h-2.38v4.75s-1.77-4.75-1.77-4.75h-2.68l-1.83,4.76V.25h-2.47l-1.29,2.27v-.02s-1.44-2.25-1.44-2.25h0s-2.54,0-2.54,0v.94c.52.67.84,1.52.84,2.44s-.32,1.78-.85,2.46v.98s2.56,0,2.56,0v-1.94l1.38,1.94,1.5-1.94v1.94s1.42,0,1.42,0h2.62l.32-.84h2.21l.32.83h1.71s2.4,0,2.4,0h3.61l.32-.84h2.2l.32.83h2.47l-2.59-6.81ZM29.84,4.6l.67-2.11.63,2.11h-1.31ZM40.41,4.6l.66-2.09.66,2.09h-1.32Z" />
+              <path fill="#fff" d="M11.06,2.9l-1.81-2.65h-2.04l-.08,4.68L5.35.25h-2.61L0,7.07h2.62l.32-.84h2.21l.32.83h3.93s0-2.79,0-2.79l1.85,2.79h2.18v-.91c-.57-.69-.92-1.57-.92-2.54s.34-1.85.92-2.54V.25h-2.35v2.65ZM3.38,4.6l.66-2.09.65,2.09h-1.3Z" />
+              <path fill="#a020f0" d="M19.54,1.69c-.64-1.01-1.76-1.69-3.05-1.69s-2.33.62-2.98,1.57c-.39.58-.63,1.28-.63,2.03s.23,1.45.63,2.03c.65.95,1.74,1.57,2.98,1.57s2.4-.67,3.04-1.67c.36-.56.56-1.22.56-1.93s-.21-1.36-.55-1.91" />
+            </svg>
+            <p class="p-claim">Intensa <span class="c-violet">•</span> <span class="c-pink">Dispersa</span> <span class="c-violet">•</span> <span class="c-lime">Distinta</span></p>
+            <p>Busquemos lo que todavía no tiene nombre.</p>
+            <a href="mailto:hola@anomala.org">hola@anomala.org</a>
+          </div>
+          <div class="col-6 col-md-3 col-lg-2">
+            <h4>Formatos</h4>
+            <ul><li><a href="#">Reportajes</a></li><li><a href="#">Entrevistas</a></li><li><a href="#">Conversaciones</a></li><li><a href="#">Crónicas</a></li><li><a href="#">Columnas</a></li><li><a href="#">Explicadores</a></li><li><a href="#">Ensayos visuales y sonoros</a></li><li><a href="#radar">Radar</a></li></ul>
+          </div>
+          <div class="col-6 col-md-3 col-lg-2">
+            <h4>Ejes</h4>
+            <ul><li><a href="#">Cultura y creación</a></li><li><a href="#">Política cultural</a></li><li><a href="#">Sociedad y vida cotidiana</a></li><li><a href="#">Tendencias y cultura digital</a></li><li><a href="#">Industrias culturales</a></li><li><a href="#">Territorios y comunidades</a></li><li><a href="#">Cultura popular</a></li></ul>
+          </div>
+          <div class="col-6 col-md-3 col-lg-2">
+            <h4>Anómala</h4>
+            <ul><li><a href="cartelera.html">Cartelera</a></li><li><a href="quienes-somos.html">Quiénes somos</a></li><li><a href="#apoya">Apoya</a></li><li><a href="#">Transparencia</a></li><li><a href="contacto.html">Contacto</a></li></ul>
+          </div>
+          <div class="col-6 col-md-3 col-lg-2">
+            <h4>Síguenos</h4>
+            <!-- Completar con las redes y canales reales del medio -->
+            <ul><li><a href="#">Instagram</a></li><li><a href="#">Newsletter</a></li></ul>
+          </div>
+        </div>
+        <div class="p-footer-bottom">
+          <span>© 2026 Anómala</span>
+          <span><a href="privacidad.html">Privacidad</a> · <a href="#">Términos</a> · <a href="#">Créditos</a></span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

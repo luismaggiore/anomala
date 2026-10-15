@@ -1,4 +1,4 @@
-/* Hero: movimiento sutil de los recortes (flotan, siguen el mouse y se apartan un poco del cursor).
+/* Collage (Quiénes somos): movimiento sutil de los recortes (flotan, siguen el mouse y se apartan un poco del cursor).
    Para hacerlo más o menos notorio, ajusta las constantes de abajo. */
 (function () {
   const hero = document.querySelector(".image-hero");
@@ -91,102 +91,8 @@
   }).observe(hero);
 })();
 
-/* Hero: modo edición del collage. Se activa abriendo home-page.html#editar
-   - Arrastrar: mueve el recorte (--x / --y)
-   - Rueda: cambia el tamaño (--w)        · Shift + rueda: gira (--r)
-   - Teclas ↑ ↓: sube o baja de capa (--z) · Flechas con Alt: mueve 0.1 en 0.1
-   - "Copiar HTML": copia las líneas <img> para pegarlas en home-page.html */
-(function () {
-  const collage = document.querySelector(".hero-collage");
-  if (!collage || location.hash !== "#editar") return;
-
-  document.body.classList.add("collage-editing");
-  const imgs = [...collage.querySelectorAll("img")];
-  const round = (n) => Math.round(n * 10) / 10;
-  const get = (el, k) => parseFloat(el.style.getPropertyValue("--" + k)) || 0;
-  const set = (el, k, v) => el.style.setProperty("--" + k, round(v));
-  let selected = null;
-
-  const panel = document.createElement("div");
-  panel.className = "collage-panel";
-  document.body.append(panel);
-
-  function line(el) {
-    const v = (k) => `--${k}: ${get(el, k)}`;
-    return `<img src="${el.getAttribute("src")}" alt="" style="${["x", "y", "w", "r", "z"].map(v).join("; ")}" />`;
-  }
-  function render() {
-    panel.innerHTML = selected
-      ? `<b>${selected.getAttribute("src").split("/").pop()}</b><br>` +
-        ["x", "y", "w", "r", "z"].map((k) => `--${k}: ${get(selected, k)}`).join(" · ")
-      : "Haz clic en un recorte para editarlo.";
-    const btn = document.createElement("button");
-    btn.textContent = "Copiar HTML";
-    btn.onclick = () => {
-      navigator.clipboard.writeText(imgs.map(line).join("\n"));
-      btn.textContent = "¡Copiado!";
-    };
-    panel.append(document.createElement("br"), btn);
-  }
-  function select(el) {
-    if (selected) selected.classList.remove("is-selected");
-    selected = el;
-    el.classList.add("is-selected");
-    render();
-  }
-
-  for (const el of imgs) {
-    el.draggable = false;
-    el.addEventListener("pointerdown", (e) => {
-      e.preventDefault();
-      select(el);
-      const rect = collage.getBoundingClientRect();
-      const start = { px: e.clientX, py: e.clientY, x: get(el, "x"), y: get(el, "y") };
-      const move = (ev) => {
-        set(el, "x", start.x + ((ev.clientX - start.px) / rect.width) * 100);
-        set(el, "y", start.y + ((ev.clientY - start.py) / rect.height) * 100);
-        render();
-      };
-      const up = () => {
-        window.removeEventListener("pointermove", move);
-        window.removeEventListener("pointerup", up);
-      };
-      window.addEventListener("pointermove", move);
-      window.addEventListener("pointerup", up);
-    });
-    el.addEventListener(
-      "wheel",
-      (e) => {
-        if (el !== selected) return;
-        e.preventDefault();
-        const dir = e.deltaY < 0 ? 1 : -1;
-        if (e.shiftKey) set(el, "r", get(el, "r") + dir);
-        else set(el, "w", Math.max(1, get(el, "w") + dir * 0.5));
-        render();
-      },
-      { passive: false }
-    );
-  }
-
-  window.addEventListener("keydown", (e) => {
-    if (!selected) return;
-    const step = 0.1;
-    const keys = {
-      ArrowUp: () => (e.altKey ? set(selected, "y", get(selected, "y") - step) : set(selected, "z", get(selected, "z") + 1)),
-      ArrowDown: () => (e.altKey ? set(selected, "y", get(selected, "y") + step) : set(selected, "z", get(selected, "z") - 1)),
-      ArrowLeft: () => e.altKey && set(selected, "x", get(selected, "x") - step),
-      ArrowRight: () => e.altKey && set(selected, "x", get(selected, "x") + step),
-    };
-    if (!keys[e.key]) return;
-    e.preventDefault();
-    keys[e.key]();
-    render();
-  });
-
-  render();
-})();
-
-/* Cartelera: filtra los eventos por disciplina (data-filtro del botón = data-disciplina del evento).
+/* Cartelera: filtra los eventos por disciplina (data-filtro del botón = data-disciplina del evento)
+   y por precio máximo (select [data-filtro-precio] contra data-precio del evento; 0 = gratis).
    Puede haber varias listas [data-cartelera] (p. ej. una por mes): si una queda vacía,
    se oculta su grupo [data-grupo] completo */
 (function () {
@@ -194,19 +100,18 @@
   const listas = document.querySelectorAll("[data-cartelera]");
   if (!filtros || !listas.length) return;
   const vacia = document.querySelector("[data-cartelera-vacia]");
+  const precio = document.querySelector("[data-filtro-precio]");
+  let disciplina = "todo";
 
-  filtros.addEventListener("click", (e) => {
-    const btn = e.target.closest("button[data-filtro]");
-    if (!btn) return;
-    for (const b of filtros.querySelectorAll("button")) {
-      b.classList.toggle("is-active", b === btn);
-      b.setAttribute("aria-pressed", b === btn);
-    }
+  const aplicar = () => {
+    const tope = precio && precio.value !== "" ? Number(precio.value) : Infinity;
     let total = 0;
     for (const lista of listas) {
       let visibles = 0;
       for (const ev of lista.children) {
-        const ver = btn.dataset.filtro === "todo" || ev.dataset.disciplina === btn.dataset.filtro;
+        const ver =
+          (disciplina === "todo" || ev.dataset.disciplina === disciplina) &&
+          Number(ev.dataset.precio || 0) <= tope;
         ev.hidden = !ver;
         if (ver) visibles++;
       }
@@ -215,7 +120,19 @@
       total += visibles;
     }
     if (vacia) vacia.hidden = total > 0;
+  };
+
+  filtros.addEventListener("click", (e) => {
+    const btn = e.target.closest("button[data-filtro]");
+    if (!btn) return;
+    for (const b of filtros.querySelectorAll("button")) {
+      b.classList.toggle("is-active", b === btn);
+      b.setAttribute("aria-pressed", b === btn);
+    }
+    disciplina = btn.dataset.filtro;
+    aplicar();
   });
+  if (precio) precio.addEventListener("change", aplicar);
 })();
 
 /* Íconos de las entradas: a cada uno le toca al azar una forma y un color de la marca,
@@ -235,4 +152,60 @@
     el.style.setProperty("--icono", `url("iconos-anomala/${icono}.webp")`);
     el.style.setProperty("--icono-color", `var(${color})`);
   }
+})();
+
+/* Panel Hazte Anómala: los botones de plan quedan deshabilitados hasta aceptar los términos */
+(function () {
+  const acepto = document.querySelector("#hazte-anomala [data-terminos]");
+  if (!acepto) return;
+  const botones = document.querySelectorAll("#hazte-anomala [data-requiere-terminos]");
+  const actualizar = () => {
+    for (const b of botones) {
+      b.classList.toggle("pe-none", !acepto.checked);
+      b.classList.toggle("opacity-50", !acepto.checked);
+      b.setAttribute("aria-disabled", !acepto.checked);
+      b.tabIndex = acepto.checked ? 0 : -1;
+    }
+  };
+  acepto.addEventListener("change", actualizar);
+  actualizar();
+})();
+
+/* Montos del aporte único (panel Hazte Anómala): marca el monto elegido y limpia "Otro monto" */
+(function () {
+  const montos = document.querySelector("#hazte-anomala .filtros");
+  if (!montos) return;
+  const otro = document.querySelector("#aporte-otro");
+  montos.addEventListener("click", (e) => {
+    const btn = e.target.closest("button");
+    if (!btn) return;
+    for (const b of montos.querySelectorAll("button")) {
+      b.classList.toggle("is-active", b === btn);
+      b.setAttribute("aria-pressed", b === btn);
+    }
+    if (otro) otro.value = "";
+  });
+})();
+
+/* Aviso de cookies: se muestra mientras no haya elección guardada; al elegir se oculta y se recuerda.
+   Por defecto no se carga analítica: solo con "Aceptar" (en WordPress lo resuelve el plugin de consentimiento) */
+(function () {
+  const aviso = document.querySelector("[data-cookies]");
+  if (!aviso) return;
+  const CLAVE = "anomala-cookies";
+  let eleccion = null;
+  try {
+    eleccion = localStorage.getItem(CLAVE);
+  } catch (e) {}
+  if (eleccion) return;
+  aviso.hidden = false;
+  aviso.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-cookies-opcion]");
+    if (!btn) return;
+    try {
+      localStorage.setItem(CLAVE, btn.dataset.cookiesOpcion); // "todas" | "necesarias"
+    } catch (e) {}
+    aviso.hidden = true;
+    // Aquí se cargaría la analítica si btn.dataset.cookiesOpcion === "todas"
+  });
 })();

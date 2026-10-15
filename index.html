@@ -26,20 +26,32 @@
           <tr>
             <td class="text-body-secondary">Portada</td>
             <td><a href="home-page.html">Home</a></td>
-            <td>Collage animado, destacados, recientes, lo más leído, cartelera, newsletter y quiénes somos.</td>
+            <td>Destacados, recientes, lo más leído, cartelera, newsletter y quiénes somos.</td>
             <td><code>front-page.php</code></td>
           </tr>
           <tr>
             <td class="text-body-secondary">Listados</td>
             <td><a href="publicaciones.html">Publicaciones</a></td>
-            <td>Todas las notas con filtro por formato, paginación y barra lateral.</td>
+            <td>Todas las notas con filtros por formato y por medio (texto, video, audio), paginación y barra lateral.</td>
             <td><code>archive.php</code></td>
           </tr>
           <tr>
             <td class="text-body-secondary"></td>
-            <td><a href="eje.html">Archivo de eje</a></td>
-            <td>Ejemplo con «Territorios y comunidades».</td>
-            <td><code>taxonomy-eje.php</code></td>
+            <td><a href="eje.html">Sección</a></td>
+            <td>Ejemplo con «Cultura». «Vida real» usa la misma plantilla.</td>
+            <td><code>category.php</code></td>
+          </tr>
+          <tr>
+            <td class="text-body-secondary"></td>
+            <td><a href="temas.html">Temas</a></td>
+            <td>Exploración por formato, medio y la lista completa de temas y disciplinas.</td>
+            <td><code>page-temas.php</code> (<code>get_terms</code>)</td>
+          </tr>
+          <tr>
+            <td class="text-body-secondary"></td>
+            <td><a href="tema.html">Archivo de tema</a></td>
+            <td>Ejemplo con «Teatro»: publicaciones del tema con filtros por formato y medio, paginación y otros temas.</td>
+            <td><code>tag.php</code></td>
           </tr>
           <tr>
             <td class="text-body-secondary"></td>
@@ -58,6 +70,12 @@
             <td><a href="autor.html">Autor</a></td>
             <td>Ficha del autor y sus publicaciones.</td>
             <td><code>author.php</code></td>
+          </tr>
+          <tr>
+            <td class="text-body-secondary"></td>
+            <td><a href="autores.html">Índice de autores</a></td>
+            <td>Voces de Anómala: fichas de todas las firmas con filtro por disciplina y su último contenido.</td>
+            <td><code>page-autores.php</code> (<code>get_users</code>)</td>
           </tr>
           <tr>
             <td class="text-body-secondary"></td>
@@ -85,9 +103,9 @@
           </tr>
           <tr>
             <td class="text-body-secondary"></td>
-            <td><a href="single-ensayo.html">Ensayo visual / sonoro</a></td>
+            <td><a href="single-ensayo.html">Contenido audiovisual / sonoro</a></td>
             <td>Audio, imágenes en secuencia y video, sin barra lateral.</td>
-            <td><code>single.php (Ensayo)</code></td>
+            <td><code>single.php (medio video/audio)</code></td>
           </tr>
           <tr>
             <td class="text-body-secondary">Páginas</td>
@@ -115,21 +133,75 @@
           </tr>
           <tr>
             <td class="text-body-secondary"></td>
+            <td><a href="condiciones-suscripcion.html">Condiciones de suscripción</a></td>
+            <td>Planes Abierta, Conversa y Encuentro, invitaciones, cobro, cambio y cancelación.</td>
+            <td><code>page.php</code></td>
+          </tr>
+          <tr>
+            <td class="text-body-secondary"></td>
+            <td><a href="normas-participacion.html">Normas de participación</a></td>
+            <td>Reglas para comentar y moderación.</td>
+            <td><code>page.php</code></td>
+          </tr>
+          <tr>
+            <td class="text-body-secondary"></td>
             <td><a href="404.html">Página no encontrada</a></td>
             <td>Error 404 con buscador.</td>
             <td><code>404.php</code></td>
           </tr>
           <tr>
-            <td class="text-body-secondary">Pendiente</td>
-            <td class="text-body-secondary">Donaciones</td>
-            <td class="text-body-secondary">A la espera de definir el modelo de aporte.</td>
+            <td class="text-body-secondary"></td>
+            <td><a href="guia-editor.html">Guía de bloques del editor</a></td>
+            <td>Página de prueba con todos los bloques de Gutenberg (títulos, citas, galería, tabla, embeds, columnas, notas al pie…) para revisar el estilo de <code>.cuerpo</code>.</td>
+            <td><code>page.php</code> (borrador, no se publica)</td>
+          </tr>
+          <tr>
+            <td class="text-body-secondary">Suscripción</td>
+            <td><a href="cuenta.html">Mi cuenta</a></td>
+            <td>Ingresar, recuperar contraseña, crear cuenta y panel del suscriptor. El panel «Hazte Anómala» se abre desde el header en todas las páginas.</td>
+            <td>Plugin de membresías (WooCommerce Subscriptions, Paid Memberships Pro o similar)</td>
+          </tr>
+          <tr>
+            <td class="text-body-secondary">Flujos de suscripción</td>
+            <td><a href="pago.html">Pago de suscripción</a></td>
+            <td>Resumen del plan elegido y paso a la pasarela de pago.</td>
+            <td>Plugin de membresías (checkout)</td>
+          </tr>
+          <tr>
+            <td class="text-body-secondary"></td>
+            <td><a href="suscripcion-confirmada.html">Suscripción confirmada</a></td>
+            <td>Mensaje tras un pago exitoso, con los beneficios del plan.</td>
+            <td>Plugin de membresías (confirmación)</td>
+          </tr>
+          <tr>
+            <td class="text-body-secondary"></td>
+            <td><a href="aporte-gracias.html">Gracias por tu aporte</a></td>
+            <td>Agradecimiento tras un aporte único.</td>
+            <td>Plugin de membresías / donaciones (confirmación)</td>
+          </tr>
+          <tr>
+            <td class="text-body-secondary"></td>
+            <td><a href="newsletter-confirmar.html">Confirma tu correo</a></td>
+            <td>Aviso tras suscribirse al newsletter: falta confirmar desde el correo.</td>
+            <td>Proveedor de newsletter (doble opt-in)</td>
+          </tr>
+          <tr>
+            <td class="text-body-secondary"></td>
+            <td><a href="newsletter-baja.html">Baja del newsletter</a></td>
+            <td>Confirmación de la baja del newsletter.</td>
+            <td>Proveedor de newsletter</td>
+          </tr>
+          <tr>
+            <td class="text-body-secondary">Referencia</td>
+            <td><a href="referencia-v1/index.html">Versión anterior (referencia)</a></td>
+            <td>Maqueta previa con el header de formatos y ejes, solo para comparar.</td>
             <td></td>
           </tr>
           </tbody>
         </table>
       </div>
 
-      <p class="small text-body-secondary mt-4">Salvo «Quiénes somos», los textos, nombres e imágenes de las notas son de ejemplo. Actualizado el 7 de octubre de 2026.</p>
+      <p class="small text-body-secondary mt-4">Salvo «Quiénes somos», los textos, nombres e imágenes de las notas son de ejemplo. Actualizado el 15 de octubre de 2026.</p>
     </main>
   </body>
 </html>

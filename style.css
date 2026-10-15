@@ -1,6 +1,6 @@
 /* =========================================================
    ANÓMALA · style.css
-   1. Variables · 2. Base · 3. Layout · 4. Componentes · 5. Utilidades · 6. Modo edición del collage
+   1. Variables · 2. Base · 3. Layout · 4. Componentes · 5. Utilidades
    Las fuentes se cargan con <link> en el <head> del HTML (un @import aquí retrasaría su descarga).
    ========================================================= */
 
@@ -81,7 +81,7 @@ img[alt=""] {
 h1, .h1,
 h2, .h2,
 h3, .h3,
-.nav-ejes a,
+.lema,
 .evento-fecha b,
 .btn-dark,
 .btn-brand,
@@ -129,124 +129,56 @@ header .container-fluid {
 header {
   padding-bottom: var(--lg);
 }
-/* Título de columna (Destacado, Reciente, Explora): misma separación con el contenido en todas */
+/* Título de columna (Destacados, Lo nuevo): misma separación con el contenido en todas */
 .col-title {
   margin-bottom: var(--sm);
 }
 
 /* ---------- 4. Componentes ---------- */
 
-/* Marca: logo (hero y footer) */
+/* Marca: logo (header y footer) */
 .brand-logo {
   width: 100%;
   margin: 10px;
 }
 
-/* Nav. Fila 1: formatos a la izquierda y utilidades a la derecha. Fila 2: los 7 ejes */
+/* Header: una sola huincha fija arriba (logo · Instagram · lupa · menú · Hazte Anómala).
+   Los colores del menú, el desplegable y el toggler son los de Bootstrap con data-bs-theme="dark" */
+.mid-nav {
+  background-color: var(--bg-main);
+  border-bottom: 1px solid var(--dark);
+}
+.mid-nav .brand-logo {
+  width: clamp(110px, 10vw, 150px);
+  margin: 0;
+}
 .mid-nav .navbar-nav {
-  gap: var(--xs);
+  gap: var(--xs) var(--md);
   padding: var(--xs) 0;
 }
 .mid-nav .nav-link {
   padding: 0;
   color: var(--text-main);
+  background: none;
+  border: 0;
 }
 .mid-nav .nav-link:hover,
-.mid-nav .nav-link:focus {
+.mid-nav .nav-link:focus-visible {
   color: var(--ui-info);
 }
-.nav-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--xs) var(--md);
-  width: 100%;
+/* Bajada del logo: tipografía de títulos, chica */
+.lema {
+  font-size: var(--sm);
+  line-height: 1;
 }
-.nav-util {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--sm);
-  padding: var(--xs) 0;
-}
-/* Buscador: el borde va en el formulario, así campo y lupa se ven como una sola pieza */
-.nav-search {
-  display: flex;
-  border: 1px solid var(--dark);
-  transition: border-color var(--transition);
-}
-.nav-search:focus-within {
-  border-color: var(--ui-info);
-}
-.nav-search input {
-  width: 160px;
-  padding: 4px var(--xs);
-  font-size: var(--sm); /* --sm nunca baja de 16px: evita el zoom automático de iPhone al tocar el campo */
-  color: var(--text-main);
-  background: transparent;
-  border: 0;
-  outline: none;
-}
-.nav-search button {
-  display: grid;
-  place-items: center;
-  padding: 0 var(--xxs);
-  color: var(--text-main);
-  background: transparent;
-  border: 0;
-  transition: color var(--transition);
-}
-.nav-search button:hover,
-.nav-search button:focus-visible {
-  color: var(--ui-info);
-}
-.mid-nav .nav-ejes {
-  flex-wrap: wrap;
-  gap: 6px var(--md);
-  padding: var(--xs) 0;
-  list-style: none;
-}
-.nav-ejes a {
-  font-size: var(--md);
-}
-.nav-ejes a:hover {
-  color: var(--text-main);
-}
+/* En móvil el botón "Hazte Anómala" queda siempre a la vista, más compacto */
 @media (max-width: 991.98px) {
-  body {
-    padding-top: 56px; /* alto del nav fijo */
-  }
-  .mid-nav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 1030;
-    background-color: var(--bg-main);
-  }
-  .mid-nav .navbar-collapse {
-    max-height: calc(100vh - 56px);
-    overflow-y: auto;
-  }
-}
-@media (min-width: 992px) {
-  .mid-nav .navbar-nav {
-    flex-wrap: wrap;
-  }
-  .mid-nav #menu-principal {
-    border-bottom: 1px solid var(--dark);
-  }
-  .mid-nav .nav-formatos {
-    padding: var(--xs) 0;
-  }
-  .mid-nav .nav-ejes {
-    width: 100%;
-    border-top: 1px solid var(--dark);
+  .mid-nav .btn-pink {
+    font-size: var(--sm);
   }
 }
 
-/* Hero: collage de recortes. Las posiciones de cada imagen están en home-page.html */
+/* Collage de recortes (Quiénes somos), con movimiento sutil (script.js). Las posiciones de cada imagen están en quienes-somos.html */
 .image-hero {
   position: relative;
   overflow: hidden;
@@ -367,6 +299,21 @@ header {
   -webkit-mask: var(--icono, url("iconos-anomala/asterisco.webp")) center / contain no-repeat;
   mask: var(--icono, url("iconos-anomala/asterisco.webp")) center / contain no-repeat;
 }
+/* Medio del contenido: ícono sobre la foto solo si es video o audio (los textos no llevan) */
+.icono-medio {
+  position: absolute;
+  top: var(--md);
+  left: var(--md);
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: var(--xxl);
+  height: var(--xxl);
+  color: var(--bg-main);
+  background-color: var(--ui-success);
+  border-radius: 50%;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+}
 /* Grilla de tarjetas: todas del mismo alto */
 .entry-grid .entry-card {
   display: flex;
@@ -378,7 +325,7 @@ header {
   flex-direction: column;
   flex: 1;
 }
-/* Columna "Reciente": tarjetas horizontales */
+/* Columna "Lo nuevo": tarjetas horizontales */
 @media (min-width: 768px) {
   .horizontal {
     display: grid;
@@ -457,13 +404,13 @@ header {
   padding: var(--lg);
 }
 .main-entry h3 {
-  font-size: var(--xlg);
+  font-size: var(--xxl);
   line-height: 1;
   color: var(--text-main);
   background-color: var(--bg-main);
 }
 
-/* Lista de enlaces con líneas (Explora y menús del footer). En una columna flex, ocupa todo el alto */
+/* Lista de enlaces con líneas (Temas y menús del footer). En una columna flex, ocupa todo el alto */
 .tematicas {
   display: flex;
   flex: 1;
@@ -667,6 +614,17 @@ header {
   color: var(--d, var(--text-main));
 }
 
+/* Afiche del evento: vertical 3/4, entre el talón de la fecha y el texto */
+.evento-afiche {
+  flex: none;
+  align-self: flex-start;
+  width: clamp(80px, 22%, 120px);
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  margin: var(--xs) 0 var(--xs) var(--xs);
+  background-color: var(--bg-main);
+}
+
 /* Cuerpo del artículo: envuelve the_content() de WordPress. Lo que escribe la redacción en el editor
    (párrafos, títulos, citas, imágenes, listas) llega sin clases propias, por eso se estiliza desde aquí */
 .cuerpo {
@@ -675,8 +633,14 @@ header {
 .cuerpo h2 {
   margin-top: var(--xl);
 }
-.cuerpo h3 {
+.cuerpo h3,
+.cuerpo h4 {
   margin-top: var(--lg);
+}
+/* h4 no lleva la tipografía de títulos: sin esto Bootstrap lo deja más grande que el h3 */
+.cuerpo h4 {
+  font-size: var(--md);
+  font-weight: var(--fw-b);
 }
 .cuerpo a {
   text-decoration: underline; /* dentro del texto, los enlaces se subrayan para distinguirlos sin depender del color */
@@ -706,10 +670,137 @@ header {
 .cuerpo audio,
 .cuerpo video {
   width: 100%;
-  height: auto;
+}
+.cuerpo img,
+.cuerpo video {
+  height: auto; /* el audio no: con height:auto Chrome lo deja en 0 px y desaparecen sus controles */
 }
 .cuerpo figcaption {
   margin-top: var(--xxs);
+}
+/* Bloques del editor que sin estas reglas se ven sin estilo (revisar en guia-editor.html).
+   En WordPress también carga wp-block-library; estas reglas siguen su misma lógica y le ponen los colores de Anómala */
+.cuerpo mark {
+  color: var(--bg-main);
+  background-color: var(--ui-success);
+}
+.cuerpo pre {
+  padding: var(--sm);
+  white-space: pre-wrap; /* código, preformateado y verso: las líneas largas bajan en vez de desbordar */
+  background: var(--surface);
+}
+.cuerpo .wp-block-verse {
+  font-family: var(--font-body);
+  font-size: var(--sm);
+  font-style: italic;
+  background: none;
+}
+/* Cita destacada: centrada entre dos líneas, para distinguirla de la cita normal */
+.cuerpo .wp-block-pullquote {
+  padding: var(--lg) 0;
+  text-align: center;
+  border-block: 4px solid var(--brand);
+}
+.cuerpo .wp-block-pullquote blockquote {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+/* Galería: 2 columnas; 3 desde tablet si el editor eligió 3. Con "Recortar imágenes" quedan cuadradas */
+.cuerpo .wp-block-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--xs);
+}
+.cuerpo .wp-block-gallery figure {
+  flex: 1 1 calc(50% - var(--xs));
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .cuerpo .wp-block-gallery.columns-3 figure {
+    flex-basis: calc(33.333% - var(--xs));
+  }
+}
+.cuerpo .is-cropped img {
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+.cuerpo .wp-block-gallery figcaption {
+  flex-basis: 100%;
+}
+/* Tabla: ancho completo, con líneas; en celular se desplaza de lado en vez de desbordar */
+.cuerpo .wp-block-table {
+  overflow-x: auto;
+}
+.cuerpo table {
+  width: 100%;
+}
+.cuerpo th,
+.cuerpo td {
+  padding: var(--xxs) var(--xs);
+  border-bottom: 1px solid var(--dark);
+}
+/* Embeds (YouTube, Spotify…): al ancho del texto; los videos, en 16:9 */
+.cuerpo iframe {
+  width: 100%;
+  border: 0;
+}
+.cuerpo .is-type-video iframe {
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+/* Botones del editor: el aspecto de .btn-brand; "Contorno" sin relleno */
+.cuerpo .wp-block-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--xs);
+}
+.cuerpo .wp-block-button__link {
+  display: inline-block;
+  padding: var(--xxs) var(--sm);
+  font-family: var(--font-title);
+  font-size: var(--md);
+  line-height: 1.2;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--text-main);
+  background: var(--brand);
+  border: 2px solid var(--brand);
+  transition: color var(--transition), background-color var(--transition);
+}
+.cuerpo .wp-block-button__link:hover {
+  color: var(--bg-main);
+  background: var(--ui-success);
+  border-color: var(--ui-success);
+}
+.cuerpo .is-style-outline .wp-block-button__link:not(:hover) {
+  background: transparent;
+}
+/* Columnas: lado a lado si hay espacio; en celular se apilan */
+.cuerpo .wp-block-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--lg);
+}
+.cuerpo .wp-block-column {
+  flex: 1 1 280px;
+}
+/* Detalles (desplegable) */
+.cuerpo details {
+  margin: var(--md) 0;
+  padding: var(--xs) var(--sm);
+  border: 1px solid var(--dark);
+}
+.cuerpo summary {
+  font-weight: var(--fw-sb);
+  cursor: pointer;
+}
+/* Notas al pie: separadas del texto y en gris */
+.cuerpo .wp-block-footnotes {
+  margin-top: var(--xl);
+  padding-top: var(--sm);
+  color: var(--text-muted);
+  border-top: 1px solid var(--dark);
 }
 
 /* Footer: solo fondo, borde y aire; el contenido usa la grilla de Bootstrap, .h3, .tematicas y .entry-info */
@@ -727,6 +818,7 @@ header {
 .c-pink { color: var(--ui-highlight); }
 .c-cyan { color: var(--ui-info); }
 .c-violet { color: var(--accent); }
+.c-muted { color: var(--text-muted); } /* textos secundarios sobre fondo oscuro */
 
 /* Etiqueta: rótulo chico en mayúsculas; toma el color de --d si existe */
 .etiqueta {
@@ -743,32 +835,10 @@ header {
   font-weight: var(--fw-md);
 }
 
-/* ---------- 6. Modo edición del collage (home-page.html#editar) ---------- */
-.collage-editing .hero-collage img {
-  pointer-events: auto; /* en #editar los recortes sí se arrastran */
-  cursor: grab;
-}
-.collage-editing .hero-collage img.is-selected {
-  outline: 2px dashed var(--ui-success);
-  outline-offset: 2px;
-}
-.collage-panel {
-  position: fixed;
-  right: 12px;
-  bottom: 12px;
-  z-index: 2000;
-  max-width: 360px;
-  padding: 12px;
-  font: var(--smallest)/1.5 ui-monospace, monospace;
-  color: var(--text-main);
-  background: rgba(0, 0, 0, 0.88);
-  border: 1px solid var(--ui-success);
-}
-.collage-panel button {
-  margin-top: 8px;
-  padding: 4px 10px;
-  font: inherit;
-  color: var(--bg-main);
-  background: var(--ui-success);
-  border: 0;
+/* Panel Hazte Anómala: el offcanvas de Bootstrap, con los colores de Anómala vía sus propias variables */
+.offcanvas {
+  --bs-offcanvas-width: min(560px, 100vw);
+  --bs-offcanvas-bg: var(--bg-main);
+  --bs-offcanvas-color: var(--text-main);
+  --bs-offcanvas-border-color: var(--dark);
 }

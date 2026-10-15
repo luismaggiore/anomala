@@ -18,160 +18,73 @@
   </head>
   <body>
     <main>
-      <div class="d-flex flex-column">
-        <header >
-          <div class="image-hero">
-            <!--
-              COLLAGE DEL HERO — cada recorte se ajusta con su atributo style:
-                --x  borde izquierdo, en % del ancho del collage (negativo = se sale por la izquierda)
-                --y  borde superior, en % del alto del collage (negativo = se sale por arriba)
-                --w  ancho, en % del ancho del collage (el alto se calcula solo)
-                --r  giro en grados (negativo = antihorario)
-                --z  capa: número más alto queda encima
-              Atajo: abre home-page.html#editar para moverlos con el mouse y copiar los valores.
-            -->
-            <div class="hero-collage" aria-hidden="true">
-              <img src="recortes-psd/poema2.webp" alt="" style="--x: -4; --y: -62; --w: 27; --r: 0; --z: 1" />
-              <img src="recortes-psd/san-pedro.webp" alt="" style="--x: -1.5; --y: 8; --w: 33; --r: -1; --z: 3" />
-              <img src="recortes-psd/mar.webp" alt="" style="--x: 19; --y: -16; --w:26; --r: 0; --z: 2" />
-              <img src="recortes-psd/poema1.webp" alt="" style="--x: 42; --y: -17; --w: 26; --r: 0; --z: 3" />
-              <img src="recortes-psd/cordillera.webp" alt="" style="--x: 34; --y: 20; --w: 30; --r: 0; --z: 4" />
-              <img src="recortes-psd/cordillera.webp" alt="" style="--x: 71; --y: -16; --w: 22; --r: 3; --z: 2" />
-              <img src="recortes-psd/bosque.webp" alt="" style="--x: 60; --y: -20; --w: 26; --r: 0; --z: 4" />
-              <img src="recortes-psd/estrellas.webp" alt="" style="--x: 78.5; --y: -20; --w: 25; --r: 0; --z:3" />
-              <!-- Personajes: van encima del paisaje (capas 6 en adelante) -->
-              <img src="recortes-psd/personajes/cueca.webp" alt="" style="--x: 9.6; --y: 0.7; --w: 13.75; --r: 0; --z: 6" />
-              <img src="recortes-psd/personajes/guitarrista.webp" alt="" style="--x: 45.6; --y: 9.3; --w: 26.25; --r: 0; --z: 7" />
-              <img src="recortes-psd/personajes/futbol.webp" alt="" style="--x: 20.6; --y: 19.8; --w: 9.4; --r: 0; --z: 7" />
-              <img src="recortes-psd/personajes/vinilos.webp" alt="" style="--x: 24.1; --y: 24; --w: 18.75; --r: 0; --z: 6" />
-              <img src="recortes-psd/personajes/huemul.webp" alt="" style="--x: 29.5; --y: 24; --w: 20; --r: 0; --z: 8" />
-              <img src="recortes-psd/personajes/dance.webp" alt="" style="--x: 64.75; --y: 13.6; --w: 27.5; --r: 0; --z: 6" />
-              <img src="recortes-psd/personajes/actor.webp" alt="" style="--x: 67.3; --y: 29.3; --w: 21.9; --r: 0; --z: 8" />
-              <img src="recortes-psd/personajes/violinist.webp" alt="" style="--x: 81.9; --y: 33.5; --w: 21.25; --r: 0; --z: 9" />
-            </div>
-            <img class="hero-tear" src="rasgado-bottom.webp" alt="" />
-          </div>
-
-          <div class="container-fluid">
-            <div class="row align-items-center g-5">
-              <div class="col-12 col-lg-7">
-                <a class="d-block" href="home-page.html" aria-label="Anómala, ir al inicio">
-                <svg
-                  id="Capa_1"
-                  class="brand-logo"
-                  data-name="Capa 1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 44.97 7.2"
-                  role="img"
-                  aria-label="Anómala"
-                >
-                  <defs>
-                    <style>
-                      .cls-1 {
-                        fill: #fff;
-                      }
-
-                      .cls-2 {
-                        fill: #a020f0;
-                      }
-                    </style>
-                  </defs>
-                  <path
-                    class="cls-1"
-                    d="M42.38.25h-2.67l-1.86,4.87h-1.82V.25h-2.38v4.75s-1.77-4.75-1.77-4.75h-2.68l-1.83,4.76V.25h-2.47l-1.29,2.27v-.02s-1.44-2.25-1.44-2.25h0s-2.54,0-2.54,0v.94c.52.67.84,1.52.84,2.44s-.32,1.78-.85,2.46v.98s2.56,0,2.56,0v-1.94l1.38,1.94,1.5-1.94v1.94s1.42,0,1.42,0h2.62l.32-.84h2.21l.32.83h1.71s2.4,0,2.4,0h3.61l.32-.84h2.2l.32.83h2.47l-2.59-6.81ZM29.84,4.6l.67-2.11.63,2.11h-1.31ZM40.41,4.6l.66-2.09.66,2.09h-1.32Z"
-                  />
-                  <path
-                    class="cls-1"
-                    d="M11.06,2.9l-1.81-2.65h-2.04l-.08,4.68L5.35.25h-2.61L0,7.07h2.62l.32-.84h2.21l.32.83h3.93s0-2.79,0-2.79l1.85,2.79h2.18v-.91c-.57-.69-.92-1.57-.92-2.54s.34-1.85.92-2.54V.25h-2.35v2.65ZM3.38,4.6l.66-2.09.65,2.09h-1.3Z"
-                  />
-                  <path
-                    class="cls-2"
-                    d="M19.54,1.69c-.64-1.01-1.76-1.69-3.05-1.69s-2.33.62-2.98,1.57c-.39.58-.63,1.28-.63,2.03s.23,1.45.63,2.03c.65.95,1.74,1.57,2.98,1.57s2.4-.67,3.04-1.67c.36-.56.56-1.22.56-1.93s-.21-1.36-.55-1.91"
-                  />
-                </svg>
-                </a>
-              </div>
-              <div class="col-12 col-lg-5">
-                <h1>Busquemos lo que todavía no tiene nombre.</h1>
-                <p class="lead">
-                  Periodismo, creación y pensamiento crítico para leer la
-                  cultura como el lugar donde una sociedad crea, discute,
-                  recuerda y proyecta su futuro.
-                </p>
-              </div>
-            </div>
-          </div>
-        </header>
-        <!-- NAV: fila 1 = formatos (qué tipo de pieza) + utilidades; fila 2 = los 7 ejes de la Brújula -->
-        <nav
-          class="navbar navbar-expand-lg mid-nav order-first order-lg-0"
-          data-bs-theme="dark"
-          aria-label="Navegación principal"
-        >
-          <div class="container-fluid">
-            <button
-              class="navbar-toggler ms-auto"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#menu-principal"
-              aria-controls="menu-principal"
-              aria-expanded="false"
-              aria-label="Abrir menú"
-            >
+      <!--
+        HEADER (header.php): una sola huincha, fija arriba.
+        Orden: Logo · Instagram · Lupa · Quiénes somos · Cultura · Vida real · Temas · Cartelera · Hazte Anómala
+        Móvil: logo, lupa, "Hazte Anómala" y menú desplegable (Instagram baja al menú).
+        Los formatos (columna, entrevista, crónica…) ya no van en el header: identifican cada contenido y filtran en Temas.
+      -->
+      <header class="mid-nav sticky-top" data-bs-theme="dark">
+        <nav class="navbar navbar-expand-lg" aria-label="Navegación principal">
+          <div class="container-fluid gap-2">
+            <a class="navbar-brand me-0" href="home-page.html" aria-label="Anómala, ir al inicio">
+              <svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44.97 7.2" aria-hidden="true">
+                <path fill="#f8f8f8" d="M42.38.25h-2.67l-1.86,4.87h-1.82V.25h-2.38v4.75s-1.77-4.75-1.77-4.75h-2.68l-1.83,4.76V.25h-2.47l-1.29,2.27v-.02s-1.44-2.25-1.44-2.25h0s-2.54,0-2.54,0v.94c.52.67.84,1.52.84,2.44s-.32,1.78-.85,2.46v.98s2.56,0,2.56,0v-1.94l1.38,1.94,1.5-1.94v1.94s1.42,0,1.42,0h2.62l.32-.84h2.21l.32.83h1.71s2.4,0,2.4,0h3.61l.32-.84h2.2l.32.83h2.47l-2.59-6.81ZM29.84,4.6l.67-2.11.63,2.11h-1.31ZM40.41,4.6l.66-2.09.66,2.09h-1.32Z" />
+                <path fill="#f8f8f8" d="M11.06,2.9l-1.81-2.65h-2.04l-.08,4.68L5.35.25h-2.61L0,7.07h2.62l.32-.84h2.21l.32.83h3.93s0-2.79,0-2.79l1.85,2.79h2.18v-.91c-.57-.69-.92-1.57-.92-2.54s.34-1.85.92-2.54V.25h-2.35v2.65ZM3.38,4.6l.66-2.09.65,2.09h-1.3Z" />
+                <path fill="#a020f0" d="M19.54,1.69c-.64-1.01-1.76-1.69-3.05-1.69s-2.33.62-2.98,1.57c-.39.58-.63,1.28-.63,2.03s.23,1.45.63,2.03c.65.95,1.74,1.57,2.98,1.57s2.4-.67,3.04-1.67c.36-.56.56-1.22.56-1.93s-.21-1.36-.55-1.91" />
+              </svg>
+              <span class="lema d-block mt-1">Intensa · <span class="c-pink">Dispersa</span> · <span class="c-lime">Distinta</span></span>
+            </a>
+            <!-- Completar con la URL real de la cuenta de Instagram -->
+            <a class="nav-link d-none d-lg-block" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Anómala en Instagram">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" /></svg>
+            </a>
+            <button class="nav-link ms-auto ms-lg-0" type="button" data-bs-toggle="collapse" data-bs-target="#buscador" aria-controls="buscador" aria-expanded="false" aria-label="Abrir buscador">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m15.5 15.5 5 5" /></svg>
+            </button>
+            <button class="btn-pink order-lg-last" type="button" data-bs-toggle="offcanvas" data-bs-target="#hazte-anomala" aria-controls="hazte-anomala">Hazte Anómala</button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menú">
               <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse flex-column align-items-stretch" id="menu-principal">
-              <div class="nav-row">
-                <ul class="navbar-nav nav-formatos" aria-label="Formatos">
-                  <li class="nav-item"><a class="nav-link" href="#">Reportajes</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#">Entrevistas</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#">Conversaciones</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#">Crónicas</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#">Columnas</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#">Explicadores</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#">Ensayos visuales y sonoros</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#">Radar</a></li>
-                </ul>
-                <div class="nav-util">
-                  <form class="nav-search" role="search" onsubmit="return false">
-                    <label class="visually-hidden" for="buscar">Buscar</label>
-                    <input id="buscar" type="search" placeholder="Buscar" />
-                    <button type="submit" aria-label="Buscar">
-                      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                        <circle cx="10.5" cy="10.5" r="6.5" />
-                        <path d="m15.5 15.5 5 5" />
-                      </svg>
-                    </button>
-                  </form>
-                  <a class="nav-link" href="cartelera.html">Cartelera</a>
-                  <a class="nav-link" href="quienes-somos.html">Quiénes somos</a>
-                  <a class="nav-link" href="contacto.html">Contacto</a>
-                  <a class="btn-pink py-1 px-3" href="#">Donar</a>
-                </div>
-              </div>
-              <ul class="navbar-nav nav-ejes" aria-label="Ejes">
-                <li><a class="c-lime" href="#">Cultura y creación</a></li>
-                <li><a class="c-pink" href="#">Política cultural</a></li>
-                <li><a class="c-cyan" href="#">Sociedad y vida cotidiana</a></li>
-                <li><a class="c-violet" href="#">Tendencias y cultura digital</a></li>
-                <li><a class="c-lime" href="#">Industrias culturales</a></li>
-                <li><a class="c-pink" href="#">Territorios y comunidades</a></li>
-                <li><a class="c-cyan" href="#">Cultura popular</a></li>
+            <div class="collapse navbar-collapse" id="menu-principal">
+              <!-- wp_nav_menu( 'principal' ). Cultura y Vida real son las dos grandes categorías; Temas reúne las etiquetas (disciplinas y temas) -->
+              <ul class="navbar-nav ms-lg-auto">
+                <li class="nav-item"><a class="nav-link" href="quienes-somos.html">Quiénes somos</a></li>
+                <li class="nav-item"><a class="nav-link" href="eje.html">Cultura</a></li>
+                <li class="nav-item"><a class="nav-link" href="eje.html">Vida real</a></li>
+                <li class="nav-item"><a class="nav-link" href="temas.html">Temas</a></li>
+                <li class="nav-item"><a class="nav-link" href="cartelera.html">Cartelera</a></li>
+                <li class="nav-item d-lg-none"><a class="nav-link" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram ↗</a></li>
               </ul>
             </div>
           </div>
         </nav>
-      </div>
-      <section >
+        <!-- Buscador (get_search_form): busca por título, tema y autor. El parámetro "s" es el de WordPress -->
+        <div class="collapse" id="buscador">
+          <div class="container-fluid pb-3">
+            <form class="form-fila" role="search" action="busqueda.html">
+              <label class="visually-hidden" for="buscar">Buscar</label>
+              <input id="buscar" name="s" type="search" placeholder="Busca por título, tema o autor" />
+              <button class="btn-brand" type="submit">Buscar</button>
+            </form>
+          </div>
+        </div>
+      </header>
+
+      <h1 class="visually-hidden">Anómala · Intensa, dispersa, distinta</h1>
+
+      <!--
+        DESTACADOS (front-page.php): carrusel de tres, elegidos y ordenados desde el administrador.
+        Navegación manual (sin avance automático). Cada uno: imagen, formato, título, bajada y autor.
+      -->
+      <section>
         <div class="container-fluid">
           <div class="row g-5">
-            <div class="col-12 col-xl-6  d-flex flex-column">
-              <h2 class="col-title">Destacado</h2>
+            <div class="col-12 col-xl-7 d-flex flex-column">
+              <h2 class="col-title">Destacados</h2>
               <div
                 id="destacados"
                 class="carousel slide main-carousel"
-                data-bs-ride="carousel"
-                data-bs-interval="6000"
               >
                 <div class="carousel-indicators">
                   <button
@@ -204,9 +117,7 @@
                         alt="Personas pintando alrededor de una mesa en un taller comunitario"
                       />
                       <div class="main-entry-content">
-                        <span class="entry-cat">
-                          <span class="category">Reportaje</span></span
-                        >
+                        <span class="entry-cat"><span>Reportaje</span><span>Territorios</span></span>
                         <h3>
                           Fuera del mapa: la cultura que se sostiene sin fondos
                           ni foco
@@ -216,6 +127,7 @@
                           entender cómo se programa, se financia y se cuida la
                           cultura lejos de Santiago.
                         </p>
+                        <div class="entry-info mt-auto"><span>por Ricardo González</span></div>
                       </div>
                     </a>
                   </div>
@@ -226,10 +138,9 @@
                         src="https://images.unsplash.com/photo-1504609813442-a8924e83f76e?auto=format&fit=crop&w=1400&q=70"
                         alt="Grupo de personas bailando de noche"
                       />
+                      <span class="icono-medio"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" fill="currentColor"><path d="M8 5v14l11-7z" /></svg><span class="visually-hidden">Video</span></span>
                       <div class="main-entry-content">
-                        <span class="entry-cat">
-                          <span class="category">Crónica</span></span
-                        >
+                        <span class="entry-cat"><span>Crónica</span><span>Danza</span></span>
                         <h3>
                           Bailar para quedarse: una noche en la fiesta del
                           barrio
@@ -239,6 +150,7 @@
                           espacios donde la comunidad se encuentra cuando cae el
                           sol.
                         </p>
+                        <div class="entry-info mt-auto"><span>por Camila Rojas</span></div>
                       </div>
                     </a>
                   </div>
@@ -250,9 +162,7 @@
                         alt="Edificio amarillo con un mural junto a la calle"
                       />
                       <div class="main-entry-content">
-                        <span class="entry-cat">
-                          <span class="category">Explicador</span></span
-                        >
+                        <span class="entry-cat"><span>Reportaje</span><span>Artes visuales</span></span>
                         <h3>
                           Muros que hablan: quién decide el arte en la calle
                         </h3>
@@ -260,6 +170,7 @@
                           Permisos, colectivos y municipios: cómo se negocia (y
                           se borra) el muralismo en las ciudades.
                         </p>
+                        <div class="entry-info mt-auto"><span>por Tomás Fuentes</span></div>
                       </div>
                     </a>
                   </div>
@@ -290,29 +201,35 @@
                 </button>
               </div>
             </div>
+            <!-- LO NUEVO (antes "Reciente"): las últimas publicaciones, automático. "Ver más" lleva al índice -->
 
-            <div class="col-12 col-xl-4 col-lg-8 horizontal">
-              <h2 class="col-title">Reciente</h2>
+            <div class="col-12 col-xl-5 horizontal">
+              <div class="col-title d-flex justify-content-between align-items-baseline">
+                <h2 class="mb-0">Lo nuevo</h2>
+                <a class="link-mas mt-0" href="publicaciones.html">Ver más →</a>
+              </div>
               <a class="entry-card" href="#">
-                <div class="entry-cat">Entrevista</div>
+                <div class="entry-cat"><span>Entrevista</span><span>Patrimonio y memoria</span></div>
                 <div class="entry-img">
                   <img
                     class="entry-photo"
                     src="https://images.unsplash.com/photo-1583521214690-73421a1829a9?auto=format&fit=crop&w=800&q=70"
                     alt="Pilas de documentos y carpetas de archivo"
                   />
+                  <span class="icono-medio"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 10v4M8 7v10M12 4v16M16 8v8M20 11v2" /></svg><span class="visually-hidden">Audio</span></span>
                 </div>
                 <div class="entry-content">
                   <span class="anomala-icon" aria-hidden="true"></span>
                   <h3>“El archivo también es un lugar de disputa”</h3>
-                  <div class="entry-info">
-                    <span>por Ricado González</span>
+                  <p>Una archivista sobre qué se guarda, qué se pierde y quién decide la memoria de una ciudad.</p>
+                  <div class="entry-info mt-auto">
+                    <span>por Ricardo González</span>
                     <span>13/09/26</span>
                   </div>
                                    </div>
               </a>
               <a class="entry-card" href="#">
-                <div class="entry-cat">Crónica</div>
+                <div class="entry-cat"><span>Crónica</span><span>Teatro</span></div>
                 <div class="entry-img">
                   <img
                     class="entry-photo"
@@ -323,328 +240,307 @@
                 <div class="entry-content">
                   <span class="anomala-icon" aria-hidden="true"></span>
                   <h3>Hacer teatro con lo que hay</h3>
-                  <div class="entry-info">
-                    <span>por Ricado González</span>
+                  <p>Una compañía de Valparaíso que monta obras con presupuesto cero y salas llenas.</p>
+                  <div class="entry-info mt-auto">
+                    <span>por Ricardo González</span>
                     <span>13/09/26</span>
                   </div>
                                    </div>
               </a>
               <a class="entry-card" href="#">
-                <div class="entry-cat">Conversación</div>
+                <div class="entry-cat"><span>Ensayo</span><span>Música</span></div>
                 <div class="entry-img">
                   <img
                     class="entry-photo"
                     src="https://images.unsplash.com/photo-1603048588665-791ca8aea617?auto=format&fit=crop&w=800&q=70"
                     alt="Disco de vinilo girando en un tocadiscos"
                   />
+                  <span class="icono-medio"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 10v4M8 7v10M12 4v16M16 8v8M20 11v2" /></svg><span class="visually-hidden">Audio</span></span>
                 </div>
                 <div class="entry-content">
                   <span class="anomala-icon" aria-hidden="true"></span>
                   <h3>La música que no llega a las playlists</h3>
-                  <div class="entry-info">
-                    <span>por Ricado González</span>
+                  <p>Tres sellos independientes conversan sobre algoritmos, vinilos y públicos fieles.</p>
+                  <div class="entry-info mt-auto">
+                    <span>por Ricardo González</span>
                     <span>13/09/26</span>
                   </div>
                                    </div>
               </a>
               <a class="entry-card" href="#">
-                <div class="entry-cat">Ensayo visual</div>
+                <div class="entry-cat"><span>Crónica</span><span>Oficios y artesanía</span></div>
                 <div class="entry-img">
                   <img
                     class="entry-photo"
                     src="https://images.unsplash.com/photo-1671535108620-d169ce916f09?auto=format&fit=crop&w=800&q=70"
                     alt="Bordado sobre tela negra junto a unas tijeras"
                   />
+                  <span class="icono-medio"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" fill="currentColor"><path d="M8 5v14l11-7z" /></svg><span class="visually-hidden">Video</span></span>
                 </div>
                 <div class="entry-content">
                   <span class="anomala-icon" aria-hidden="true"></span>
                   <h3>Bordar para no olvidar</h3>
-                  <div class="entry-info">
-                    <span>por Ricado González</span>
+                  <p>Arpilleras, hilos y memoria: un recorrido visual por talleres de bordado del sur.</p>
+                  <div class="entry-info mt-auto">
+                    <span>por Ricardo González</span>
                     <span>13/09/26</span>
                   </div>
                                    </div>
               </a>
             </div>
-            <div class="col-xl-2 col-lg-4 d-flex flex-column">
-              <h2 class="col-title">Explora</h2>
-              <ul class="tematicas">
-                <li><a href="#">Música</a></li>
-                <li><a href="#">Artes visuales</a></li>
-                <li><a href="#">Cine</a></li>
-                <li><a href="#">Deporte</a></li>
-                <li><a href="#">Teatro</a></li>
-                <li><a href="#">Literatura</a></li>
-                <li><a href="#">Danza</a></li>
-                <li><a href="#">Fotografía</a></li>
-                <li><a href="#">Diseño</a></li>
-                <li><a href="#">Arquitectura y ciudad</a></li>
-                <li><a href="#">Patrimonio y memoria</a></li>
-                <li><a href="#">Oficios y artesanía</a></li>
-                <li><a href="#">Gastronomía</a></li>
-                <li><a href="#">Moda</a></li>
-                <li><a href="#">Humor</a></li>
-                <li><a href="#">Televisión</a></li>
-                <li><a href="#">Videojuegos</a></li>
-                <li><a href="#">Cultura digital</a></li>
-                <li><a href="#">Territorios</a></li>
-                <li><a href="#">Política cultural</a></li>
-                <li><a href="#">Trabajo cultural</a></li>
-              </ul>
-            </div>
           </div>
         </div>
       </section>
+
+      <!--
+        VOCES DE ANÓMALA: 4 a 6 personas elegidas desde el administrador (figuras reconocidas y autores emergentes).
+        Cada ficha: fotografía, nombre, descripción breve y enlace al perfil (author.php) o a su último contenido.
+      -->
       <section>
         <div class="container-fluid mt-5">
-          <h2>Lo más leído</h2>
-          <div
-            class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 entry-grid"
-          >
+          <h2 class="text-center mb-5">Voces de Anómala</h2>
+          <div class="row row-cols-2 row-cols-md-3 row-cols-xl-6 g-4 text-center">
             <div class="col">
-              <a class="entry-card" href="#">
-                <div class="entry-cat">
-                  <span class="category">Entrevista</span
-                  ><span class="category">Diseño</span>
-                </div>
+              <a class="entry-card border-0 h-100" href="autor.html">
+                <img class="rounded-circle mx-auto mb-3 object-fit-cover" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=320&h=320&q=70" alt="" width="120" height="120" />
+                <h3 class="h3 mb-1">Ricardo González</h3>
+                <p class="entry-info justify-content-center">Periodista cultural. Escribe sobre archivos y memoria.</p>
+              </a>
+            </div>
+            <div class="col">
+              <a class="entry-card border-0 h-100" href="autor.html">
+                <img class="rounded-circle mx-auto mb-3 object-fit-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=320&h=320&q=70" alt="" width="120" height="120" />
+                <h3 class="h3 mb-1">Camila Rojas</h3>
+                <p class="entry-info justify-content-center">Cronista. Recorre escenas de teatro y barrio.</p>
+              </a>
+            </div>
+            <div class="col">
+              <a class="entry-card border-0 h-100" href="autor.html">
+                <img class="rounded-circle mx-auto mb-3 object-fit-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=320&h=320&q=70" alt="" width="120" height="120" />
+                <h3 class="h3 mb-1">Tomás Fuentes</h3>
+                <p class="entry-info justify-content-center">Músico e investigador de sellos independientes.</p>
+              </a>
+            </div>
+            <div class="col">
+              <a class="entry-card border-0 h-100" href="autor.html">
+                <img class="rounded-circle mx-auto mb-3 object-fit-cover" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=320&h=320&q=70" alt="" width="120" height="120" />
+                <h3 class="h3 mb-1">Antonia Paredes</h3>
+                <p class="entry-info justify-content-center">Artista visual. Trabaja con textiles y archivo.</p>
+              </a>
+            </div>
+            <div class="col">
+              <a class="entry-card border-0 h-100" href="autor.html">
+                <img class="rounded-circle mx-auto mb-3 object-fit-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=320&h=320&q=70" alt="" width="120" height="120" />
+                <h3 class="h3 mb-1">Javiera Muñoz</h3>
+                <p class="entry-info justify-content-center">Gestora cultural en el norte. Voz emergente.</p>
+              </a>
+            </div>
+            <div class="col">
+              <a class="entry-card border-0 h-100" href="autor.html">
+                <img class="rounded-circle mx-auto mb-3 object-fit-cover" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=320&h=320&q=70" alt="" width="120" height="120" />
+                <h3 class="h3 mb-1">Daniela Soto</h3>
+                <p class="entry-info justify-content-center">Ensayista. Piensa la cultura digital.</p>
+              </a>
+            </div>
+          </div>
+          <!-- Índice completo de autores (page-autores.php) -->
+          <p class="text-center mb-0"><a class="link-mas" href="autores.html">Ver todas las voces →</a></p>
+        </div>
+      </section>
+
+      <!--
+        LO MÁS LEÍDO: ordenado por lecturas reales en un período definido (p. ej. últimos 30 días, vía estadísticas).
+        Mientras no haya datos suficientes, se titula "Selección Anómala" y lo elige la redacción.
+      -->
+      <section>
+        <div class="container-fluid mt-5">
+          <h2>Selección Anómala</h2>
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 entry-grid">
+            <div class="col">
+              <a class="entry-card" href="single-entrevista.html">
+                <div class="entry-cat"><span>Entrevista</span><span>Diseño</span></div>
                 <div class="entry-img">
-                  <img
-                    class="entry-photo"
-                    src="https://images.unsplash.com/photo-1569309338532-a0c01062acc8?auto=format&fit=crop&w=800&q=70"
-                    alt="Mano dibujando con lápiz sobre papel"
-                  />
+                  <img class="entry-photo" src="https://images.unsplash.com/photo-1569309338532-a0c01062acc8?auto=format&fit=crop&w=800&q=70" alt="Mano dibujando con lápiz sobre papel" />
                   <img src="papel-rasgado.webp" class="rasgado-total" alt="" />
                 </div>
                 <div class="entry-content">
                   <span class="anomala-icon" aria-hidden="true"></span>
                   <h3>Lo que la IA no sabe sobre ilustrar</h3>
-                  <div class="entry-info">
-                    <span>por Ricado González</span>
-                    <span>13/09/26</span>
-                  </div>
-                  <p>
-                    Una ilustradora sobre autoría, encargos y el valor del trazo
-                    propio en tiempos de imágenes generadas.
-                  </p>
-                                   </div>
+                  <p>Una ilustradora sobre autoría, encargos y el valor del trazo propio en tiempos de imágenes generadas.</p>
+                  <div class="entry-info mt-auto"><span>por Daniela Soto</span><span>13/09/26</span></div>
+                </div>
               </a>
             </div>
             <div class="col">
-              <a class="entry-card" href="#">
-                <div class="entry-cat">
-                  <span class="category">Columna</span
-                  ><span class="category">Deporte</span>
-                </div>
+              <a class="entry-card" href="single-columna.html">
+                <div class="entry-cat"><span>Columna</span><span>Deporte</span></div>
                 <div class="entry-img">
-                  <img
-                    class="entry-photo"
-                    src="https://images.unsplash.com/photo-1665413811870-5b29a250f64a?auto=format&fit=crop&w=800&q=70"
-                    alt="Hinchada en las graderías de un estadio"
-                  />
+                  <img class="entry-photo" src="https://images.unsplash.com/photo-1665413811870-5b29a250f64a?auto=format&fit=crop&w=800&q=70" alt="Hinchada en las graderías de un estadio" />
                   <img src="papel-rasgado2.webp" class="rasgado-total" alt="" />
                 </div>
                 <div class="entry-content">
                   <span class="anomala-icon" aria-hidden="true"></span>
-                  <h3>
-                    El fútbol también es cultura (y deberíamos tratarlo así)
-                  </h3>
-                  <div class="entry-info">
-                    <span>por Ricado González</span>
-                    <span>13/09/26</span>
-                  </div>
-                  <p>
-                    Barrios, hinchadas y memoria: por qué la política cultural
-                    sigue mirando hacia otro lado.
-                  </p>
-                                   </div>
+                  <h3>El fútbol también es cultura (y deberíamos tratarlo así)</h3>
+                  <p>Barrios, hinchadas y memoria: por qué la política cultural sigue mirando hacia otro lado.</p>
+                  <div class="entry-info mt-auto"><span>por Tomás Fuentes</span><span>10/09/26</span></div>
+                </div>
               </a>
             </div>
             <div class="col">
-              <a class="entry-card" href="#">
-                <div class="entry-cat">
-                  <span class="category">Explicador</span
-                  ><span class="category">Política cultural</span>
-                </div>
-
+              <a class="entry-card" href="single.html">
+                <div class="entry-cat"><span>Reportaje</span><span>Política cultural</span></div>
                 <div class="entry-img">
-                  <img
-                    class="entry-photo"
-                    src="https://images.unsplash.com/photo-1603796846097-bee99e4a601f?auto=format&fit=crop&w=800&q=70"
-                    alt="Persona completando formularios sobre una mesa"
-                  />
+                  <img class="entry-photo" src="https://images.unsplash.com/photo-1603796846097-bee99e4a601f?auto=format&fit=crop&w=800&q=70" alt="Persona completando formularios sobre una mesa" />
                   <img src="papel-rasgado3.webp" class="rasgado-total" alt="" />
                 </div>
                 <div class="entry-content">
                   <span class="anomala-icon" aria-hidden="true"></span>
-                  <h3>
-                    Fondos concursables: lo que cambia en la próxima
-                    convocatoria
-                  </h3>
-                  <div class="entry-info">
-                    <span>por Ricado González</span>
-                    <span>13/09/26</span>
-                  </div>
-                  <p>
-                    Plazos, montos y nuevas líneas de financiamiento, explicados
-                    en simple.
-                  </p>
-                                   </div>
+                  <h3>Fondos concursables: lo que cambia en la próxima convocatoria</h3>
+                  <p>Plazos, montos y nuevas líneas de financiamiento, explicados en simple.</p>
+                  <div class="entry-info mt-auto"><span>por Javiera Muñoz</span><span>05/09/26</span></div>
+                </div>
               </a>
             </div>
             <div class="col">
-              <a class="entry-card" href="#">
-                <div class="entry-cat">
-                  <span class="category">Radar</span
-                  ><span class="category">Territorios</span>
-                </div>
+              <a class="entry-card" href="single.html">
+                <div class="entry-cat"><span>Columna</span><span>Territorios</span></div>
                 <div class="entry-img">
-                  <img
-                    class="entry-photo"
-                    src="https://images.unsplash.com/photo-1569783721854-33a99b4c0bae?auto=format&fit=crop&w=800&q=70"
-                    alt="Público frente a una pintura en una exposición"
-                  />
+                  <img class="entry-photo" src="https://images.unsplash.com/photo-1569783721854-33a99b4c0bae?auto=format&fit=crop&w=800&q=70" alt="Público frente a una pintura en una exposición" />
+                  <span class="icono-medio"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 10v4M8 7v10M12 4v16M16 8v8M20 11v2" /></svg><span class="visually-hidden">Audio</span></span>
                   <img src="papel-rasgado.webp" class="rasgado-total" alt="" />
                 </div>
                 <div class="entry-content">
                   <span class="anomala-icon" aria-hidden="true"></span>
                   <h3>Señales de la semana: lo que empieza a moverse</h3>
-                  <div class="entry-info">
-                    <span>por Ricado González</span>
-                    <span>13/09/26</span>
-                  </div>
-                  <p>
-                    Obras, escenas y proyectos emergentes fuera del circuito de
-                    siempre.
-                  </p>
-                                   </div>
+                  <p>Obras, escenas y proyectos emergentes fuera del circuito de siempre.</p>
+                  <div class="entry-info mt-auto"><span>por Camila Rojas</span><span>01/09/26</span></div>
+                </div>
               </a>
             </div>
           </div>
         </div>
       </section>
+
       <!--
-        CARTELERA: eventos externos (no organizados por Anómala) que el equipo va cargando.
-        Cada evento es una .col con data-disciplina (para el filtro). --d define el color de la disciplina.
-        Mostrar solo próximos eventos, ordenados por fecha. "Más info" enlaza a la fuente externa.
-        Para sumar una disciplina: un botón en .filtros con data-filtro="..." y el mismo valor en los eventos.
+        CARTELERA (selección breve): solo actividades vigentes, elegidas como destacadas desde el administrador.
+        Los eventos finalizados salen solos. Los filtros (fecha, región/comuna, disciplina, precio) viven en cartelera.html.
+        --d = color de la disciplina.
       -->
-      <section id="cartelera">
-        <div class="container-fluid">
+      <section>
+        <div class="container-fluid mt-5">
           <h2>Cartelera</h2>
-          <p>Obras, conciertos, muestras y funciones que nos parecen valiosas.</p>
-
-          <div class="filtros" role="group" aria-label="Filtrar por disciplina">
-            <button type="button" class="is-active" data-filtro="todo" aria-pressed="true">Todo</button>
-            <button type="button" data-filtro="teatro" aria-pressed="false">Teatro</button>
-            <button type="button" data-filtro="musica" aria-pressed="false">Música</button>
-            <button type="button" data-filtro="artes-visuales" aria-pressed="false">Artes visuales</button>
-            <button type="button" data-filtro="cine" aria-pressed="false">Cine</button>
-            <button type="button" data-filtro="danza" aria-pressed="false">Danza</button>
-          </div>
-
-          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" data-cartelera>
-            <div class="col" data-disciplina="teatro">
-              <article class="evento" style="--d: var(--ui-highlight)">
-                <time class="evento-fecha" datetime="2026-10-09">Vie<b>09</b>oct</time>
-                <div class="entry-content">
-                  <span class="etiqueta">Teatro</span>
-                  <h3>Las cosas que no dijimos</h3>
-                  <div class="entry-info"><span>Sala Teatro del Puente · Santiago</span><span>20:00 · desde $6.000</span></div>
-                  <a href="#" target="_blank" rel="noopener">Más info ↗</a>
-                </div>
-              </article>
-            </div>
-            <div class="col" data-disciplina="musica">
-              <article class="evento" style="--d: var(--ui-success)">
-                <time class="evento-fecha" datetime="2026-10-10">Sáb<b>10</b>oct</time>
-                <div class="entry-content">
-                  <span class="etiqueta">Música</span>
-                  <h3>Cumbia de cerro: noche de bandas locales</h3>
-                  <div class="entry-info"><span>Centro cultural de barrio · Valparaíso</span><span>21:30 · $5.000</span></div>
-                  <a href="#" target="_blank" rel="noopener">Más info ↗</a>
-                </div>
-              </article>
-            </div>
-            <div class="col" data-disciplina="artes-visuales">
-              <article class="evento" style="--d: var(--ui-info)">
-                <time class="evento-fecha" datetime="2026-10-11">Dom<b>11</b>oct</time>
-                <div class="entry-content">
-                  <span class="etiqueta">Artes visuales</span>
-                  <h3>Archivo vivo: fotografía popular del sur</h3>
-                  <div class="entry-info"><span>Galería municipal · Concepción</span><span>Hasta el 30 nov · Gratis</span></div>
-                  <a href="#" target="_blank" rel="noopener">Más info ↗</a>
-                </div>
-              </article>
-            </div>
-            <div class="col" data-disciplina="cine">
-              <article class="evento" style="--d: var(--accent)">
-                <time class="evento-fecha" datetime="2026-10-14">Mié<b>14</b>oct</time>
-                <div class="entry-content">
-                  <span class="etiqueta">Cine</span>
-                  <h3>Ciclo de documental chileno: cuerpos y territorio</h3>
-                  <div class="entry-info"><span>Cineclub universitario · Temuco</span><span>19:00 · Gratis</span></div>
-                  <a href="#" target="_blank" rel="noopener">Más info ↗</a>
-                </div>
-              </article>
-            </div>
-            <div class="col" data-disciplina="danza">
+          <p>Obras, conciertos, muestras y funciones que nos parecen valiosas, en todo Chile y para todos los bolsillos.</p>
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <div class="col">
               <article class="evento" style="--d: var(--ui-highlight)">
                 <time class="evento-fecha" datetime="2026-10-17">Sáb<b>17</b>oct</time>
+                <img class="evento-afiche" src="https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=300&h=400&q=70" alt="Afiche de la obra Las cosas que no dijimos" loading="lazy" />
                 <div class="entry-content">
-                  <span class="etiqueta">Danza</span>
-                  <h3>Suelo: danza contemporánea en espacio público</h3>
-                  <div class="entry-info"><span>Plaza central · Antofagasta</span><span>18:00 · Gratis</span></div>
-                  <a href="#" target="_blank" rel="noopener">Más info ↗</a>
+                  <span class="etiqueta">Teatro</span>
+                  <h3><a class="text-reset" href="single-evento.html">Las cosas que no dijimos</a></h3>
+                  <div class="entry-info"><span>Teatro del Puente · Santiago, RM</span><span>20:00 · desde $6.000</span></div>
+                  <a href="#" target="_blank" rel="noopener">Entradas ↗</a>
                 </div>
               </article>
             </div>
-            <div class="col" data-disciplina="musica">
+            <div class="col">
               <article class="evento" style="--d: var(--ui-success)">
                 <time class="evento-fecha" datetime="2026-10-18">Dom<b>18</b>oct</time>
+                <img class="evento-afiche" src="https://images.unsplash.com/photo-1603048588665-791ca8aea617?auto=format&fit=crop&w=300&h=400&q=70" alt="Afiche del concierto Cuerdas del norte" loading="lazy" />
                 <div class="entry-content">
                   <span class="etiqueta">Música</span>
-                  <h3>Cuerdas del norte: guitarra y charango</h3>
-                  <div class="entry-info"><span>Teatro regional · La Serena</span><span>20:00 · desde $8.000</span></div>
+                  <h3><a class="text-reset" href="single-evento.html">Cuerdas del norte: guitarra y charango</a></h3>
+                  <div class="entry-info"><span>Teatro Regional · La Serena, Coquimbo</span><span>20:00 · desde $8.000</span></div>
+                  <a href="#" target="_blank" rel="noopener">Entradas ↗</a>
+                </div>
+              </article>
+            </div>
+            <div class="col">
+              <article class="evento" style="--d: var(--ui-info)">
+                <time class="evento-fecha" datetime="2026-10-09">Hasta<b>30</b>nov</time>
+                <img class="evento-afiche" src="https://images.unsplash.com/photo-1569783721854-33a99b4c0bae?auto=format&fit=crop&w=300&h=400&q=70" alt="Afiche de la muestra Archivo vivo" loading="lazy" />
+                <div class="entry-content">
+                  <span class="etiqueta">Artes visuales</span>
+                  <h3><a class="text-reset" href="single-evento.html">Archivo vivo: fotografía popular del sur</a></h3>
+                  <div class="entry-info"><span>Casa de la Cultura · Valdivia, Los Ríos</span><span>Mar a dom · 10:00 a 18:00 · Gratis</span></div>
                   <a href="#" target="_blank" rel="noopener">Más info ↗</a>
                 </div>
               </article>
             </div>
           </div>
-          <p data-cartelera-vacia hidden>No hay eventos de esta disciplina en las próximas semanas.</p>
           <a class="btn-brand mt-4" href="cartelera.html">Ver cartelera completa</a>
         </div>
       </section>
-      <section class="mt-3 py-0 bg-dark" >
-        <img class="w-100" src="rasgado-top.webp" alt="" />
-        <div class="container-fluid text-center">
-        <h2 class="mb-4 frase-grande" >Conectamos voces , disciplinas , territorios y públicos que rara vez dialogan.
-</h2>
-<p>Anómala es una multiplataforma cultural y un laboratorio territorial. Periodismo, creación y pensamiento crítico.
-</p>
-<a class="btn-brand" href="quienes-somos.html">Conoce quiénes somos</a>
-</div>
-<img class="w-100" src="rasgado-bottom.webp" alt="" />
-      </section>
-      <!-- Newsletter. Conectar el formulario al proveedor de correo que usen (Mailchimp, Substack, etc.) -->
+
+      <!--
+        ALIADOS: logos ordenados desde el administrador, con el tipo de relación cuando corresponda.
+        En WordPress, si no hay aliados confirmados el bloque completo no se imprime.
+      -->
       <section>
+        <div class="container-fluid mt-5">
+          <h2>Aliados</h2>
+          <div class="row row-cols-2 row-cols-md-4 row-cols-xl-6 g-4 text-center">
+            <div class="col">
+              <div class="border p-4 h-100 d-flex flex-column justify-content-center gap-2">
+                <span class="h3 mb-0 c-muted">Logo</span>
+                <span class="etiqueta">Medio aliado</span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="border p-4 h-100 d-flex flex-column justify-content-center gap-2">
+                <span class="h3 mb-0 c-muted">Logo</span>
+                <span class="etiqueta">Patrocinio</span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="border p-4 h-100 d-flex flex-column justify-content-center gap-2">
+                <span class="h3 mb-0 c-muted">Logo</span>
+                <span class="etiqueta">Colaboración</span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="border p-4 h-100 d-flex flex-column justify-content-center gap-2">
+                <span class="h3 mb-0 c-muted">Logo</span>
+                <span class="etiqueta">Espacio cultural</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--
+        HAZTE ANÓMALA: newsletter gratis (Anómala Abierta) + acceso a los planes.
+        Conectar el formulario al servicio de newsletter: doble confirmación y baja en cada envío.
+        Los planes pagos también lo reciben: el servicio debe evitar registros duplicados por correo.
+      -->
+      <section id="newsletter" class="mt-5">
         <div class="container-fluid">
           <div class="s-rasgada">
             <div class="row g-4 align-items-center">
               <div class="col-12 col-lg-7">
                 <h2>Recibe Anómala en tu correo</h2>
-                <p class="mb-0">Lo que publicamos, directo a tu bandeja.</p>
+                <p>Historias, ideas y panoramas para mirar la cultura desde otros lugares.</p>
+                <p class="mb-0">¿Quieres comentar y participar del debate? <a class="text-reset text-decoration-underline" href="#hazte-anomala" data-bs-toggle="offcanvas">Conoce los planes de Hazte Anómala</a>.</p>
               </div>
               <div class="col-12 col-lg-5">
-                <form class="form-fila" onsubmit="return false">
-                  <label class="visually-hidden" for="newsletter-mail">Tu correo</label>
-                  <input id="newsletter-mail" type="email" placeholder="tu@correo.cl" required />
-                  <button class="btn-dark" type="submit">Suscribirme</button>
+                <form action="newsletter-confirmar.html">
+                  <div class="form-fila">
+                    <label class="visually-hidden" for="newsletter-mail">Tu correo</label>
+                    <input id="newsletter-mail" type="email" placeholder="tu@correo.cl" required />
+                    <button class="btn-dark" type="submit">Suscribirme gratis</button>
+                  </div>
+                  <div class="form-check mt-2 mb-0">
+                    <input class="form-check-input" type="checkbox" id="newsletter-terminos" required />
+                    <label class="form-check-label" for="newsletter-terminos">Acepto los <a class="text-reset text-decoration-underline" href="condiciones-suscripcion.html">términos y condiciones</a> y la <a class="text-reset text-decoration-underline" href="privacidad.html">política de privacidad</a>.</label>
+                  </div>
                 </form>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      <!-- FOOTER (footer.php) -->
       <footer class="footer">
         <div class="container-fluid">
           <div class="row g-5">
@@ -657,61 +553,126 @@
               </svg>
               </a>
               <p class="h3">Intensa • <span class="c-pink">Dispersa</span> • <span class="c-lime">Distinta</span></p>
-              <p>Busquemos lo que todavía no tiene nombre.</p>
+              <p>Conectamos voces, disciplinas, territorios y públicos de la cultura.</p>
               <a href="mailto:hola@anomala.org">hola@anomala.org</a>
             </div>
-            <nav class="col-6 col-md-3 col-lg-2 offset-lg-1" aria-label="Formatos">
-              <h2 class="h3">Formatos</h2>
+            <nav class="col-6 col-md-4 col-lg-2 offset-lg-3" aria-label="Contenidos">
+              <h2 class="h3">Contenidos</h2>
               <ul class="tematicas">
-                <li><a href="#">Reportajes</a></li>
-                <li><a href="#">Entrevistas</a></li>
-                <li><a href="#">Conversaciones</a></li>
-                <li><a href="#">Crónicas</a></li>
-                <li><a href="#">Columnas</a></li>
-                <li><a href="#">Explicadores</a></li>
-                <li><a href="#">Ensayos visuales y sonoros</a></li>
-                <li><a href="#">Radar</a></li>
+                <li><a href="eje.html">Cultura</a></li>
+                <li><a href="eje.html">Vida real</a></li>
+                <li><a href="temas.html">Temas</a></li>
+                <li><a href="cartelera.html">Cartelera</a></li>
               </ul>
             </nav>
-            <nav class="col-6 col-md-3 col-lg-2" aria-label="Ejes">
-              <h2 class="h3">Ejes</h2>
-              <ul class="tematicas">
-                <li><a href="#">Cultura y creación</a></li>
-                <li><a href="#">Política cultural</a></li>
-                <li><a href="#">Sociedad y vida cotidiana</a></li>
-                <li><a href="#">Tendencias y cultura digital</a></li>
-                <li><a href="#">Industrias culturales</a></li>
-                <li><a href="#">Territorios y comunidades</a></li>
-                <li><a href="#">Cultura popular</a></li>
-              </ul>
-            </nav>
-            <nav class="col-6 col-md-3 col-lg-2" aria-label="Anómala">
+            <nav class="col-6 col-md-4 col-lg-2" aria-label="Anómala">
               <h2 class="h3">Anómala</h2>
               <ul class="tematicas">
-                <li><a href="cartelera.html">Cartelera</a></li>
                 <li><a href="quienes-somos.html">Quiénes somos</a></li>
-                <li><a href="#">Donar</a></li>
+                <li><a href="#hazte-anomala" data-bs-toggle="offcanvas">Hazte Anómala</a></li>
+                <li><a href="cuenta.html">Mi cuenta</a></li>
                 <li><a href="page.html">Transparencia</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
               </ul>
             </nav>
-            <nav class="col-6 col-md-3 col-lg-2" aria-label="Síguenos">
+            <nav class="col-6 col-md-4 col-lg-2" aria-label="Síguenos">
               <h2 class="h3">Síguenos</h2>
               <!-- Completar con las redes y canales reales del medio -->
               <ul class="tematicas">
-                <li><a href="#">Instagram</a></li>
-                <li><a href="#">Newsletter</a></li>
+                <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
+                <li><a href="home-page.html#newsletter">Newsletter</a></li>
               </ul>
             </nav>
           </div>
           <div class="entry-info border-top pt-3 mt-5">
             <span>© 2026 Anómala</span>
-            <span><a href="privacidad.html">Privacidad</a> · <a href="#">Términos</a> · <a href="#">Créditos</a></span>
+            <span><a href="privacidad.html">Privacidad</a> · <a href="condiciones-suscripcion.html">Condiciones de suscripción</a> · <a href="normas-participacion.html">Normas de participación</a> · <a href="#">Créditos</a></span>
             <span>Desarrollado por <a href="https://maggiore.cl" target="_blank" rel="noopener">Maggiore</a></span>
           </div>
         </div>
       </footer>
+
+      <!--
+        PANEL HAZTE ANÓMALA (footer.php, una vez por página). Lo abre el botón del header y cualquier enlace
+        con data-bs-toggle="offcanvas" hacia #hazte-anomala. Explica los beneficios ANTES de pedir registro o pago.
+        Los contenidos editoriales son gratuitos: los planes pagos habilitan los comentarios (y Encuentro, invitaciones).
+        Los botones de plan llevan a cuenta.html (registro + pago); el cobro recurrente lo resuelve la pasarela.
+      -->
+      <aside class="offcanvas offcanvas-end" tabindex="-1" id="hazte-anomala" aria-labelledby="hazte-anomala-titulo" data-bs-theme="dark">
+        <div class="offcanvas-header">
+          <h2 class="offcanvas-title" id="hazte-anomala-titulo">Hazte Anómala</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+        </div>
+        <div class="offcanvas-body">
+          <p class="lead">Todo lo que publicamos es y seguirá siendo gratis. Suscribiéndote sostienes el medio y te sumas a la conversación.</p>
+
+          <!-- Términos: los botones de plan se habilitan al aceptar (en WP, además, se valida en el registro) -->
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="acepto-terminos" data-terminos />
+            <label class="form-check-label" for="acepto-terminos">Acepto los <a href="condiciones-suscripcion.html">términos y condiciones de suscripción</a> y las <a href="normas-participacion.html">normas de participación</a>.</label>
+          </div>
+          <div class="d-grid gap-3 my-4">
+            <article class="border p-3">
+              <span class="etiqueta">Gratis</span>
+              <h3>Anómala Abierta</h3>
+              <p>Recibe el newsletter con lo que publicamos.</p>
+              <a class="btn-dark border" href="home-page.html#newsletter" data-requiere-terminos>Suscribirme gratis</a>
+            </article>
+            <article class="border p-3">
+              <span class="etiqueta" style="--d: var(--ui-highlight)">$5.000 CLP mensuales</span>
+              <h3>Anómala Conversa</h3>
+              <p>Newsletter, lectura de los comentarios y posibilidad de comentar y participar del debate.</p>
+              <a class="btn-pink" href="cuenta.html?plan=conversa#registro" data-requiere-terminos>Elegir Conversa</a>
+            </article>
+            <article class="border border-2 p-3" style="--bs-border-color: var(--brand)">
+              <span class="etiqueta" style="--d: var(--ui-success)">$10.000 CLP mensuales</span>
+              <h3>Anómala Encuentro</h3>
+              <p>Todos los beneficios de Conversa, más invitaciones sin costo a los eventos propios de Anómala incluidos en el programa de suscriptores, con inscripción previa y sujetas a aforo.</p>
+              <a class="btn-brand" href="cuenta.html?plan=encuentro#registro" data-requiere-terminos>Elegir Encuentro</a>
+            </article>
+          </div>
+          <p class="entry-info"><span>¿Ya tienes cuenta? <a href="cuenta.html#ingresar">Inicia sesión</a></span> <a href="condiciones-suscripcion.html">Condiciones de suscripción</a></p>
+
+          <hr />
+          <!-- Aporte único: no cambia el plan ni habilita beneficios. Es una operación distinta de la suscripción -->
+          <h3>Quiero hacer un aporte único</h3>
+          <form action="aporte-gracias.html">
+            <div class="filtros" role="group" aria-label="Monto del aporte">
+              <button type="button" aria-pressed="false">$3.000</button>
+              <button type="button" class="is-active" aria-pressed="true">$5.000</button>
+              <button type="button" aria-pressed="false">$10.000</button>
+              <button type="button" aria-pressed="false">$20.000</button>
+            </div>
+            <div class="form-fila">
+              <label class="visually-hidden" for="aporte-otro">Otro monto</label>
+              <input id="aporte-otro" type="number" min="1000" step="500" placeholder="Otro monto" />
+              <button class="btn-brand" type="submit">Aportar</button>
+            </div>
+            <p class="entry-info">Un aporte único no cambia tu plan ni habilita beneficios de suscripción.</p>
+          </form>
+
+          <hr />
+          <h3>Donaciones y alianzas</h3>
+          <p>Si eres empresa o persona y quieres realizar un aporte mayor o gestionar una donación cultural, conversemos.</p>
+          <a class="btn-dark border" href="contacto.html">Escríbenos</a>
+        </div>
+      </aside>
     </main>
+
+    <!--
+      AVISO DE COOKIES. En WordPress lo pone un plugin de consentimiento (Complianz, CookieYes…), que además
+      bloquea la analítica hasta que se acepta: por defecto no se carga nada que no sea necesario.
+      En la maqueta, script.js lo muestra si no hay elección guardada y la recuerda en localStorage.
+    -->
+    <div class="position-fixed bottom-0 start-0 end-0 py-3 border-top" style="z-index: 1030; background: var(--bg-deep)" role="region" aria-label="Aviso de cookies" data-cookies hidden>
+      <div class="container-fluid d-flex flex-wrap align-items-center gap-3">
+        <p class="mb-0 me-auto">Usamos cookies propias y de analítica para saber qué se lee y mejorar el sitio. <a href="privacidad.html">Política de privacidad</a>.</p>
+        <div class="d-flex flex-wrap gap-2">
+          <button class="btn-dark border" type="button" data-cookies-opcion="necesarias">Solo necesarias</button>
+          <button class="btn-brand" type="button" data-cookies-opcion="todas">Aceptar</button>
+        </div>
+      </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
