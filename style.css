@@ -216,7 +216,8 @@ header {
   }
 }
 
-/* Tarjetas de entrada (.entry-card) y portada del carrusel (.main-entry): son enlaces completos */
+/* Tarjetas de entrada (.entry-card) y portada del carrusel (.main-entry): el título lleva .stretched-link
+   (toda la tarjeta es clicable) y las etiquetas de formato y tema son enlaces propios */
 .entry-card,
 .entry-card:hover,
 .main-entry,
@@ -245,13 +246,24 @@ header {
   font-size: var(--smallest);
   color: var(--text-main);
 }
-.entry-cat span {
+.entry-cat span,
+.entry-cat a {
   z-index: 4;
   padding: 2px 10px;
   background-color: var(--brand);
   border: 2px solid var(--bg-main);
   border-top: none;
   border-right: none;
+}
+/* Las etiquetas son enlaces (formato y tema): quedan sobre el enlace que cubre la tarjeta */
+.entry-cat a {
+  position: relative;
+  color: var(--text-main);
+  transition: background-color var(--transition), color var(--transition);
+}
+.entry-cat a:hover {
+  color: var(--bg-main);
+  background-color: var(--ui-success);
 }
 .entry-img {
   position: relative;
@@ -290,6 +302,7 @@ header {
    script.js elige al azar --icono (iconos-anomala/*.webp) y --icono-color (brand o colores UI) */
 .anomala-icon {
   position: absolute;
+  pointer-events: none; /* deja pasar el clic al enlace de la tarjeta */
   top: calc(var(--xlg) * -1 + 5px);
   right: var(--xs);
   z-index: 2;
@@ -302,6 +315,7 @@ header {
 /* Medio del contenido: ícono sobre la foto solo si es video o audio (los textos no llevan) */
 .icono-medio {
   position: absolute;
+  pointer-events: none;
   top: var(--md);
   left: var(--md);
   z-index: 3;
