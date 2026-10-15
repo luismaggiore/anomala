@@ -209,3 +209,33 @@
     // Aquí se cargaría la analítica si btn.dataset.cookiesOpcion === "todas"
   });
 })();
+
+/* Contacto: preselecciona el asunto que llega en la URL (p. ej. contacto.html?asunto=donar desde "Donaciones y alianzas") */
+(function () {
+  const asunto = document.querySelector("#c-asunto");
+  const valor = new URLSearchParams(location.search).get("asunto");
+  if (!asunto || !valor) return;
+  const opcion = [...asunto.options].find((o) => o.value === valor);
+  if (opcion) asunto.value = valor;
+})();
+
+/* Ingresar: abre la pestaña del hash (#registro, #recuperar), la cambia con los enlaces internos
+   y preselecciona el plan que llega en la URL (?plan=conversa / ?plan=encuentro) */
+(function () {
+  const pestañas = document.querySelectorAll('[data-bs-toggle="pill"]');
+  if (!pestañas.length || !window.bootstrap) return;
+  const abrir = (id) => {
+    const btn = document.querySelector('[data-bs-toggle="pill"][data-bs-target="#' + id + '"]');
+    if (btn) bootstrap.Tab.getOrCreateInstance(btn).show();
+  };
+  if (location.hash) abrir(location.hash.slice(1));
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest("a[data-tab]");
+    if (!a) return;
+    e.preventDefault();
+    abrir(a.getAttribute("href").slice(1));
+  });
+  const plan = new URLSearchParams(location.search).get("plan");
+  const select = document.querySelector("#registro-plan");
+  if (plan && select && [...select.options].some((o) => o.value === plan)) select.value = plan;
+})();

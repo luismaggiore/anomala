@@ -20,7 +20,7 @@
     <main>
       <!--
         HEADER (header.php): una sola huincha, fija arriba.
-        Orden: Logo · Instagram · Lupa · Quiénes somos · Cultura · Vida real · Temas · Cartelera · Hazte Anómala
+        Orden: Logo · Instagram · Lupa · Cuenta · Quiénes somos · Cultura · Vida real · Temas · Cartelera · Hazte Anómala
         Móvil: logo, lupa, "Hazte Anómala" y menú desplegable (Instagram baja al menú).
         Los formatos (columna, entrevista, crónica…) ya no van en el header: identifican cada contenido y filtran en Temas.
       -->
@@ -36,12 +36,17 @@
               <span class="lema d-block mt-1">Intensa · <span class="c-pink">Dispersa</span> · <span class="c-lime">Distinta</span></span>
             </a>
             <!-- Completar con la URL real de la cuenta de Instagram -->
-            <a class="nav-link d-none d-lg-block" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Anómala en Instagram">
+            <a class="nav-link d-none d-lg-block ms-lg-4" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Anómala en Instagram">
               <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" /></svg>
             </a>
             <button class="nav-link ms-auto ms-lg-0" type="button" data-bs-toggle="collapse" data-bs-target="#buscador" aria-controls="buscador" aria-expanded="false" aria-label="Abrir buscador">
               <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m15.5 15.5 5 5" /></svg>
             </button>
+            <!-- Cuenta: sin sesión lleva a ingresar.html; con sesión muestra la foto o las iniciales y lleva a mi-cuenta.html:
+                 <a class="nav-link" href="mi-cuenta.html" aria-label="Mi cuenta"><span class="avatar" style="--avatar: 30px" aria-hidden="true">CR</span></a> -->
+            <a class="nav-link" href="ingresar.html" aria-label="Ingresar a tu cuenta">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4" /><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" /></svg>
+            </a>
             <button class="btn-pink order-lg-last" type="button" data-bs-toggle="offcanvas" data-bs-target="#hazte-anomala" aria-controls="hazte-anomala">Hazte Anómala</button>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menú">
               <span class="navbar-toggler-icon"></span>
@@ -186,7 +191,7 @@
                 <p class="lead">La conversación sigue aquí. Suscríbete a Anómala Conversa para leer los comentarios y participar.</p>
                 <div class="d-flex flex-wrap align-items-center gap-3">
                   <a class="btn-pink" href="#hazte-anomala" data-bs-toggle="offcanvas">Suscribirme</a>
-                  <a href="cuenta.html#ingresar">Ya tengo cuenta: iniciar sesión</a>
+                  <a href="ingresar.html">Ya tengo cuenta: iniciar sesión</a>
                 </div>
               </div>
 
@@ -215,7 +220,7 @@
                 <ol class="list-unstyled">
                   <li class="py-3 border-bottom" id="comentario-1">
                     <article>
-                      <div class="entry-info mt-0"><b>tomas.fuentes</b><time datetime="2026-10-07T09:40">7 oct 2026, 09:40</time></div>
+                      <div class="entry-info mt-0 align-items-center"><span class="d-inline-flex align-items-center gap-2"><span class="avatar" aria-hidden="true">TF</span><b>tomas.fuentes</b></span><time datetime="2026-10-07T09:40">7 oct 2026, 09:40</time></div>
                       <p>Muy necesario contarlo. ¿Habrá una segunda parte?</p>
                       <div class="d-flex gap-3">
                         <button class="etiqueta bg-transparent border-0 p-0" type="button">Responder</button>
@@ -227,7 +232,7 @@
                     <ol class="list-unstyled ms-4 ms-md-5 mt-3 border-start ps-3">
                       <li id="comentario-2">
                         <article>
-                          <div class="entry-info mt-0"><b>valeria.m</b><time datetime="2026-10-07T11:15">7 oct 2026, 11:15</time></div>
+                          <div class="entry-info mt-0 align-items-center"><span class="d-inline-flex align-items-center gap-2"><span class="avatar" aria-hidden="true">VM</span><b>valeria.m</b></span><time datetime="2026-10-07T11:15">7 oct 2026, 11:15</time></div>
                           <p>Me sumo a la pregunta. En mi región pasa algo muy parecido.</p>
                           <div class="d-flex gap-3">
                             <button class="etiqueta bg-transparent border-0 p-0" type="button">Responder</button>
@@ -239,7 +244,7 @@
                   </li>
                   <li class="py-3 border-bottom" id="comentario-3">
                     <article>
-                      <div class="entry-info mt-0"><b>jp.soto</b><time datetime="2026-10-08T20:02">8 oct 2026, 20:02</time></div>
+                      <div class="entry-info mt-0 align-items-center"><span class="d-inline-flex align-items-center gap-2"><span class="avatar" aria-hidden="true">JS</span><b>jp.soto</b></span><time datetime="2026-10-08T20:02">8 oct 2026, 20:02</time></div>
                       <p>Lo compartí con la gente de mi centro cultural. Nos sentimos muy reflejados.</p>
                       <div class="d-flex gap-3">
                         <button class="etiqueta bg-transparent border-0 p-0" type="button">Responder</button>
@@ -249,7 +254,7 @@
                   </li>
                   <li class="py-3 border-bottom" id="comentario-4">
                     <article>
-                      <div class="entry-info mt-0"><b>ana.lucia</b><time datetime="2026-10-09T08:30">9 oct 2026, 08:30</time></div>
+                      <div class="entry-info mt-0 align-items-center"><span class="d-inline-flex align-items-center gap-2"><span class="avatar" aria-hidden="true">AL</span><b>ana.lucia</b></span><time datetime="2026-10-09T08:30">9 oct 2026, 08:30</time></div>
                       <p>Gracias por mirar donde casi nadie mira. Ojalá sigan con esta línea.</p>
                       <div class="d-flex gap-3">
                         <button class="etiqueta bg-transparent border-0 p-0" type="button">Responder</button>
@@ -376,7 +381,7 @@
               <ul class="tematicas">
                 <li><a href="quienes-somos.html">Quiénes somos</a></li>
                 <li><a href="#hazte-anomala" data-bs-toggle="offcanvas">Hazte Anómala</a></li>
-                <li><a href="cuenta.html">Mi cuenta</a></li>
+                <li><a href="mi-cuenta.html">Mi cuenta</a></li>
                 <li><a href="page.html">Transparencia</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
               </ul>
@@ -402,7 +407,7 @@
         PANEL HAZTE ANÓMALA (footer.php, una vez por página). Lo abre el botón del header y cualquier enlace
         con data-bs-toggle="offcanvas" hacia #hazte-anomala. Explica los beneficios ANTES de pedir registro o pago.
         Los contenidos editoriales son gratuitos: los planes pagos habilitan los comentarios (y Encuentro, invitaciones).
-        Los botones de plan llevan a cuenta.html (registro + pago); el cobro recurrente lo resuelve la pasarela.
+        Los botones de plan llevan a ingresar.html#registro (registro + pago); el cobro recurrente lo resuelve la pasarela.
       -->
       <aside class="offcanvas offcanvas-end" tabindex="-1" id="hazte-anomala" aria-labelledby="hazte-anomala-titulo" data-bs-theme="dark">
         <div class="offcanvas-header">
@@ -428,16 +433,16 @@
               <span class="etiqueta" style="--d: var(--ui-highlight)">$5.000 CLP mensuales</span>
               <h3>Anómala Conversa</h3>
               <p>Newsletter, lectura de los comentarios y posibilidad de comentar y participar del debate.</p>
-              <a class="btn-pink" href="cuenta.html?plan=conversa#registro" data-requiere-terminos>Elegir Conversa</a>
+              <a class="btn-pink" href="ingresar.html?plan=conversa#registro" data-requiere-terminos>Elegir Conversa</a>
             </article>
             <article class="border border-2 p-3" style="--bs-border-color: var(--brand)">
               <span class="etiqueta" style="--d: var(--ui-success)">$10.000 CLP mensuales</span>
               <h3>Anómala Encuentro</h3>
               <p>Todos los beneficios de Conversa, más invitaciones sin costo a los eventos propios de Anómala incluidos en el programa de suscriptores, con inscripción previa y sujetas a aforo.</p>
-              <a class="btn-brand" href="cuenta.html?plan=encuentro#registro" data-requiere-terminos>Elegir Encuentro</a>
+              <a class="btn-brand" href="ingresar.html?plan=encuentro#registro" data-requiere-terminos>Elegir Encuentro</a>
             </article>
           </div>
-          <p class="entry-info"><span>¿Ya tienes cuenta? <a href="cuenta.html#ingresar">Inicia sesión</a></span> <a href="condiciones-suscripcion.html">Condiciones de suscripción</a></p>
+          <p class="entry-info"><span>¿Ya tienes cuenta? <a href="ingresar.html">Inicia sesión</a></span> <a href="condiciones-suscripcion.html">Condiciones de suscripción</a></p>
 
           <hr />
           <!-- Aporte único: no cambia el plan ni habilita beneficios. Es una operación distinta de la suscripción -->
@@ -460,7 +465,7 @@
           <hr />
           <h3>Donaciones y alianzas</h3>
           <p>Si eres empresa o persona y quieres realizar un aporte mayor o gestionar una donación cultural, conversemos.</p>
-          <a class="btn-dark border" href="contacto.html">Escríbenos</a>
+          <a class="btn-dark border" href="contacto.html?asunto=donar">Escríbenos</a>
         </div>
       </aside>
     </main>

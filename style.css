@@ -545,7 +545,8 @@ header {
 .filtros a:hover {
   border-color: var(--text-main);
 }
-.filtros .is-active {
+.filtros .is-active,
+.filtros .active {
   color: var(--bg-main);
   background: var(--text-main);
   border-color: var(--text-main);
@@ -809,6 +810,22 @@ header {
   padding: var(--xl) 0 var(--md);
   background: var(--bg-deep);
   border-top: 1px solid var(--dark);
+}
+
+/* Avatar de la cuenta (nav, Mi cuenta y comentarios): foto <img> o iniciales <span>. Tamaño con --avatar */
+.avatar {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: var(--avatar, 32px);
+  height: var(--avatar, 32px);
+  font-size: calc(var(--avatar, 32px) * 0.4);
+  font-weight: var(--fw-b);
+  line-height: 1;
+  color: var(--text-main);
+  background-color: var(--brand);
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 /* ---------- 5. Utilidades ---------- */
